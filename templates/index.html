@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NFL Analyst</title>
+  <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/keen-dashboards.css')}}">
+  <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/dc.css')}}">
+  <link rel="stylesheet" href="{{ url_for ('static',filename='css/custom.css')}}">
+</head>
+<body class="application">
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="./">Football Analyst</a>
+        <a href="javascript:dc.filterAll();dc.renderAll();" class="btn btn-info" role="button" style="margin-top: 7px">Reset All</a>
+      </div>
+    </div>
+  </div>
+  <div  id="outer" class="container-fluid">
+    <div class="row">
+      <!-- team select -->
+      <div class="col-sm-2">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Team
+          </div>
+          <div class="chart-stage">
+            <div id="team-menu-select"></div>
+          </div>
+        </div>
+      </div>
+      <!-- team select -->
+      <!-- pass/rush select -->
+      <div class="col-sm-2">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Play Type
+          </div>
+          <div class="chart-stage">
+            <div id="pass-or-rush-menu-select"></div>
+          </div>
+        </div>
+      </div>
+      <!-- pass/rush select -->
+      <!-- Total Plays -->
+      <div class="col-sm-2">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Total Plays
+          </div>
+          <div class="chart-stage" style="background: #33CC99;
+            position: relative;
+            font-size: 29px;
+            color: white;
+            vertical-align: middle;
+            text-align: center;
+            padding-top: 12px;
+            padding-bottom: 0px;">
+            <div id="number-plays-nd"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Total Plays -->
+      <!-- Total Yards -->
+      <div class="col-sm-2">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Total Yards
+          </div>
+          <div class="chart-stage" style="background: #33CC99;
+            position: relative;
+            font-size: 29px;
+            color: white;
+            vertical-align: middle;
+            text-align: center;
+            padding-top: 12px;
+            padding-bottom: 0px;">
+            <div id="total-yards-nd"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Total Yards -->
+      <!-- Advaced Options -->
+      <div class="col-sm-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Advanced Options
+          </div>
+          <div class="chart-stage">
+            <form action="" method="">
+              <input type="checkbox" value="underTwoMinutes"> Under 2 minutes<br>
+            </form>
+            <!--div id="pass-or-rush-menu-select"></div-->
+          </div>
+        </div>
+      </div>
+      <!-- Advanced Options -->
+      <!--div class="col-sm-2">
+        <a href="javascript:dc.filterAll();dc.renderAll();" class="btn btn-info" role="button">Reset All</a>
+      </div-->
+    </div>
+    <div id="weeklyRow" class="row">
+      <!-- Plays Chart -->
+      <div class="col-sm-6">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Weekly Breakdown
+          </div>
+          <div class="chart-stage">
+            <div id="plays-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Plays Chart -->
+      <!-- Down Row Chart -->
+      <div class="col-sm-2">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Down
+          </div>
+          <div class="chart-stage">
+            <div id="down-row-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Down Row Chart -->
+      <!-- Time Row Chart -->
+      <div class="col-sm-2">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Time Remaining
+          </div>
+          <div class="chart-stage">
+            <div id="time-row-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Time Row Chart -->
+      <!-- Quarter Row Chart -->
+      <div class="col-sm-2">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Quarter
+          </div>
+          <div class="chart-stage">
+            <div id="quarter-row-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Quarter Row Chart -->
+    </div>
+    <div id="passRow" class="row">
+      <!-- Yards Chart -->
+      <!--div class="col-sm-9">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Total Yards by Week
+          </div>
+          <div class="chart-stage">
+            <div id="yards-chart"></div>
+          </div>
+        </div>
+      </div-->
+      <!-- Yards Chart -->
+      <!-- Complete/Incomplete Pie Chart-->
+      <div class="col-sm-3">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Complete/Incomplete Pass
+          </div>
+          <div class="chart-stage">
+            <div id="complete-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Complete/Incomplete Pie Chart -->
+      <!-- Pass Location Row Chart -->
+      <div class="col-sm-3">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Pass Location
+          </div>
+          <div class="chart-stage">
+            <div id="formation-type-row-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Pass Location Row Chart -->
+      <!-- Pass to Position Pie Chart -->
+      <div class="col-sm-3">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Pass to Position Breakdown
+          </div>
+          <div class="chart-stage">
+            <div id="position-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Pass to Position Pie Chart --> 
+      <!-- Air Yards Row Chart -->
+      <div class="col-sm-3">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Pass Length
+          </div>
+          <div class="chart-stage">
+            <div id="passlength-row-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Air Yards Row Chart --> 
+    </div>
+    <div id="runRow" class="row">   
+      <!-- Run Location Row Chart -->
+      <div class="col-sm-3">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Run Location
+          </div>
+          <div class="chart-stage">
+            <div id="run-location-row-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Run Location Row Chart -->
+      <!-- Run Gap Row Chart -->
+      <div class="col-sm-3">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Run Gap
+          </div>
+          <div class="chart-stage">
+            <div id="run-gap-row-chart"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Run Gap Row Chart --> 
+    </div>
+  </div> 
+    <!-- Poverty -->
+    <!--
+      <div class="col-sm-3">
+      <div class="chart-wrapper">
+        <div class="chart-title">
+          Poverty Level
+        </div>
+        <div class="chart-stage">
+          <div id="poverty-level-row-chart"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Poverty -->      
+    <!--/div>
+  </div-->
+  <hr>
+  <p class="small text-muted"> Data viz &#9829; from Code Institute</p>
+  <script src="{{ url_for ('static', filename='lib/js/jquery.min.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/crossfilter.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/d3.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/dc.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/queue.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/keen.min.js')}}"></script>
+  <script src="{{ url_for ('static', filename='js/graph.js')}}"></script>
+</body>
+</html>
