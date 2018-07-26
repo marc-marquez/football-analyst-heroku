@@ -82,6 +82,9 @@ def nfl_data():
                 "$unwind":"$receiverInfo"
             },
             {
+                "$limit": 100000
+            },
+            {
                 "$project":
                 {
                     "_id": 0,
