@@ -3,12 +3,16 @@ from flask import render_template
 from pymongo import MongoClient
 from pprint import pprint
 import json
+import os
 
 app = Flask(__name__)
 
-MONGODB_HOST = 'localhost'
-MONGODB_PORT = 27017
-DBS_NAME = 'NFLScrapR'
+#MONGODB_HOST = 'localhost'
+#MONGODB_PORT = 27017
+#DBS_NAME = 'NFLScrapR'
+
+MONGO_URI = os.getenv('MONGODB_URI','mongodb://ds129010.mlab.com:29010')
+DBS_NAME = os.getenv('MONGO_DB_NAME','heroku_51gxnjkc')
 PBP_2017_COLLECTION_NAME = 'pbp_2017'
 ROSTERS_2017_COLLECTION_NAME = 'rosters_2017'
 
@@ -21,7 +25,7 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/NFLScrapR/pbp_2017")
+@app.route("/pbp_2017")
 def nfl_data():
     """
     A Flask view to serve the project data from
@@ -42,7 +46,8 @@ def nfl_data():
 
     # Open a connection to MongoDB using a with statement such that the
     # connection will be closed as soon as we exit the with statement
-    with MongoClient(MONGODB_HOST, MONGODB_PORT) as conn:
+    #with MongoClient(MONGODB_HOST, MONGODB_PORT) as conn:
+    with MongoClient(MONGO_URI) as conn:
         # Define which collection we wish to access
         pbp_2017_collection = conn[DBS_NAME][PBP_2017_COLLECTION_NAME]
         rosters_2017_collection = conn[DBS_NAME][ROSTERS_2017_COLLECTION_NAME]
