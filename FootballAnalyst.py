@@ -33,16 +33,16 @@ def nfl_data():
     """
 
     # A constant that defines the record fields that we wish to retrieve.
-    PBP_FIELDS = {
-        '_id': False, 'GameID': True, 'Date': True, 'Week':True, 'posteam': True, 'DefensiveTeam': True,'YardsGained': True, 'PassAttempt': True, 'RushAttempt': True,'PassLocation': True, 'PassOutcome': True,
-        'Receiver_ID': True
-    }
-    PLAYER_FIELDS = {
-        '_id': False, 'GSIS_ID': True, 'Pos': True
-    }
-    COMBO_FIELDS = {
-        'Pos': True
-    }
+    #PBP_FIELDS = {
+    #    '_id': False, 'GameID': True, 'Date': True, 'Week':True, 'posteam': True, 'DefensiveTeam': True,'YardsGained': True, 'PassAttempt': True, 'PassLocation': True, 'PassOutcome': True,
+    #    'Receiver_ID': True
+    #}
+    #PLAYER_FIELDS = {
+    #    '_id': False, 'GSIS_ID': True, 'Pos': True
+    #}
+    #COMBO_FIELDS = {
+    #    'Pos': True
+    #}
 
     # Open a connection to MongoDB using a with statement such that the
     # connection will be closed as soon as we exit the with statement
