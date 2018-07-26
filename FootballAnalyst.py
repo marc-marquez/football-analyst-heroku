@@ -34,7 +34,7 @@ def nfl_data():
 
     # A constant that defines the record fields that we wish to retrieve.
     PBP_FIELDS = {
-        '_id': False, 'GameID': True, 'Date': True, 'Week':True, 'posteam': True, 'DefensiveTeam': True,'YardsGained': True, 'PassAttempt': True, 'PassLocation': True, 'PassOutcome': True,
+        '_id': False, 'GameID': True, 'Date': True, 'Week':True, 'posteam': True, 'DefensiveTeam': True,'YardsGained': True, 'PassAttempt': True, 'RushAttempt': True,'PassLocation': True, 'PassOutcome': True,
         'Receiver_ID': True
     }
     PLAYER_FIELDS = {
