@@ -1,5 +1,5 @@
 queue()
-    .defer(d3.json, "/NFLScrapR/pbp_2017")
+    .defer(d3.json, "/pbp_2017")
     .await(makeGraphs);
 
 function print_filter(filter){
