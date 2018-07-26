@@ -82,9 +82,6 @@ def nfl_data():
                 "$unwind":"$receiverInfo"
             },
             {
-                "$limit": 100000
-            },
-            {
                 "$project":
                 {
                     "_id": 0,
@@ -109,7 +106,10 @@ def nfl_data():
                     #"Location":{"$or": [{"PassLocation"},{"RunLocation"}]},
                     "Position":"$receiverInfo.Pos"
                 }
-            }
+            },
+            {
+                "$limit": 20000
+            },
         ]
 
         #console.log(all_2017)

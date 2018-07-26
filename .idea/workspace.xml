@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cbcef0d-900e-425b-80d7-f8d4d835ae31" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/FootballAnalyst.py" afterPath="$PROJECT_DIR$/FootballAnalyst.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +16,8 @@
       <file leaf-file-name="FootballAnalyst.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FootballAnalyst.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="84" column="32" lean-forward="false" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
+            <state relative-caret-position="278">
+              <caret line="110" column="27" lean-forward="false" selection-start-line="110" selection-start-column="27" selection-end-line="110" selection-end-column="27" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -229,7 +228,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1968" y="71" width="1701" height="869" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32945737" sideWeight="0.4954792" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32945737" sideWeight="0.5045208" order="7" side_tool="true" content_ui="tabs" />
@@ -394,8 +392,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FootballAnalyst.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="84" column="32" lean-forward="false" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
+        <state relative-caret-position="278">
+          <caret line="110" column="27" lean-forward="false" selection-start-line="110" selection-start-column="27" selection-end-line="110" selection-end-column="27" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
