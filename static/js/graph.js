@@ -106,12 +106,12 @@ function makeGraphs(error, nflData2017) {
         return d.PlayAttempted;
     });
     var passLocationDim = ndx.dimension(function (d) {
-        /*if (d.PassLocation == 'NA'){
-            //return d.PassLocation;
-        } else {
+        if (d.PassLocation != 'NA'){
             return d.PassLocation;
-        }*/
-        return d.PassLocation;
+        } /* else {
+            return d.PassLocation;
+        }
+        return d.PassLocation;*/
     });
     var runLocationDim = ndx.dimension(function (d) {
         return d.RunLocation;
@@ -623,7 +623,7 @@ function makeGraphs(error, nflData2017) {
         .group(passOutcomeGroup)
         .legend(dc.legend()
             .legendText(function (d) {return d.name;})
-            .x(10)
+            .x(0)
             .y(5)
         )
         /*.on('preRender', function(passOutcomeChart) {
@@ -669,7 +669,7 @@ function makeGraphs(error, nflData2017) {
         .slicesCap(3)
         .legend(dc.legend()
             .legendText(function (d) { return d.name; })
-            .x(10)
+            .x(0)
             .y(5)
         )
         //.label(function(d) {return d.key + ' ' + Math.round((d.endAngle - d.startAngle) / Math.PI * 50) + '%';});
