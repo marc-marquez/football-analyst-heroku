@@ -66,8 +66,8 @@ def nfl_data():
                     #"PassAttempt": 1,
                     #"PlayAttempted":1
                     #"RushAttempt":1
-                    #"$or": [{"PlayType":"Pass"},{"PlayType":"Run"}]
-                    "PlayType": "Pass"
+                    "$or": [{"PlayType":"Pass"},{"PlayType":"Run"}]
+                    #"PlayType": "Pass"
                 }
             },
             {
