@@ -284,23 +284,23 @@ function makeGraphs(error, nflData2017) {
 
     playsChart
         //.ordinalColors(colorScheme)
-        .width(800)
+        .width(window.innerWidth-50)
         .height(300)
-        .margins({top: 30, right: 50, bottom: 30, left: 50})
+        .margins({top: 30, right: 20, bottom: 30, left: 50})
         .dimension(dateDim)
-        //.group(numPlaysByDate)
-        //.xyTipsOn(false)
-        //.renderDataPoints(true)
-        //.dotRadius(10)
-        //.renderArea(true)
         .transitionDuration(500)
-        //.shareColors(true)
         //.x(d3.time.scale().domain([minDate, maxDate]))
         .x(d3.scale.linear().domain([minDate, maxDate]))
         .elasticY(true)
-        .legend(dc.legend().legendText(function (d) {
-            return d.name;
-        }))
+        .legend(dc.legend()
+            .legendText(function (d,i) {
+                legendArray = ["Yards","Plays"];
+                return legendArray[i];
+            })
+            .horizontal(true)
+            .x(10)
+            .y(5)
+        )
         //.xAxisLabel("Week")
         .compose([
             dc.lineChart(playsChart)
