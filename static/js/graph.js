@@ -415,9 +415,10 @@ function makeGraphs(error, nflData2017) {
         .ordinalColors(colorScheme)
         .width(300)
         .height(300)
+        .margins({top: 30, right: 0, bottom: 30, left: 50})
         .dimension(passLocationDim)
         .group(passLocation)
-        //.labelOffsetX(-40)
+        .labelOffsetX(-40)
         .ordering(function(d){
             if(d.key == "left") return 0;
             else if (d.key == "middle") return 1;
@@ -569,10 +570,11 @@ function makeGraphs(error, nflData2017) {
         .ordinalColors(colorScheme)
         .width(300)
         .height(300)
+        .margins({top: 30, right: 0, bottom: 30, left: 50})
         .dimension(runLocationDim)
         .group(runLocation)
         .elasticX(true)
-        //.labelOffsetX(-20)
+        .labelOffsetX(-40)
         .on('pretransition', function(runLocationChart) {
             currentTeam = offensiveTeamSelectField.filters()[0];
             runLocationChart.ordinalColors(getTeamColors(currentTeam));
@@ -591,10 +593,11 @@ function makeGraphs(error, nflData2017) {
         .ordinalColors(colorScheme)
         .width(300)
         .height(300)
+        .margins({top: 30, right: 0, bottom: 30, left: 50})
         .dimension(runGapDim)
         .group(runGapGroup)
         .elasticX(true)
-        //.labelOffsetX(-20)
+        .labelOffsetX(-40)
         .on('pretransition', function(runGapChart) {
             currentTeam = offensiveTeamSelectField.filters()[0];
             runGapChart.ordinalColors(getTeamColors(currentTeam));
