@@ -197,7 +197,7 @@ function makeGraphs(error, nflData2017) {
     //var playsBarChart = dc.barChart("#plays-chart");
     var yardsChart = dc.lineChart("#yards-chart");
     //var stackedChart = dc.lineChart()
-    var passLocationChart = dc.rowChart("#formation-type-row-chart");
+    var passLocationChart = dc.rowChart("#pass-location-row-chart");
     var numberPassPlaysND = dc.numberDisplay("#number-plays-nd");
     var totalYardsND = dc.numberDisplay("#total-yards-nd");
     var passOutcomeChart = dc.pieChart("#complete-chart");
