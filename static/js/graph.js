@@ -293,7 +293,7 @@ function makeGraphs(error, nflData2017) {
 
     playsChart
         //.ordinalColors(colorScheme)
-        .width(window.innerWidth/2-10)
+        .width(window.innerWidth-10)
         //.width(900)
         .height(300)
         .margins({top: 30, right: 50, bottom: 30, left: 50})
@@ -401,7 +401,7 @@ function makeGraphs(error, nflData2017) {
 
     yardsChart
         .ordinalColors(colorScheme)
-        .width(window.innerWidth/2-10)
+        .width(window.innerWidth-10)
         .height(300)
         .margins({top: 30, right: 50, bottom: 30, left: 50})
         .dimension(dateDim)
