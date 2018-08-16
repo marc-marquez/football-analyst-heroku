@@ -167,14 +167,19 @@ function makeGraphs(error, nflData2017) {
     var numPassPlaysByDate = weekDim.group().reduceSum(function(d) {return d.PlayType=="Pass"});
     var timeUnderGroup = timeUnderDim.group();
     var quarterGroup = quarterDim.group();
-    var passLocation = passLocationDim.group();
-    var runLocation = runLocationDim.group();
-    var runGapGroup = runGapDim.group();
+    //var passLocation = passLocationDim.group();
+    var passLocation = passLocationDim.group().reduceSum(function(d) {return d.PlayType=="Pass"});
+    //var runLocation = runLocationDim.group();
+    var runLocation = runLocationDim.group().reduceSum(function(d) {return d.PlayType=="Run"});
+    //var runGapGroup = runGapDim.group();
+    var runGapGroup = runGapDim.group().reduceSum(function(d) {return d.PlayType=="Run"});
     //var passAttemptGroup = passAttemptDim.group();
     //var rushAttemptGroup = rushAttemptDim.group();
-    var passOutcomeGroup = passOutcomeDim.group();
+    //var passOutcomeGroup = passOutcomeDim.group();
+    var passOutcomeGroup = passOutcomeDim.group().reduceSum(function(d) {return d.PlayType=="Pass"});
     var offenseTeamGroup = offenseTeamDim.group();
-    var positionGroup = positionDim.group();
+    //var positionGroup = positionDim.group();
+    var positionGroup = positionDim.group().reduceSum(function(d) {return d.PlayType=="Pass"});
     var downGroup = downDim.group();
     var playTypeGroup = playTypeDim.group();
 
