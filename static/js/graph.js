@@ -46,7 +46,8 @@ function getTeamColors(team){
         ["TEN",["#4095D1","#00295B","#DA2128","#BCC4C9"]],
         ["WAS",["#FFC20F","#7C1415","#000000","#693213"]]
     ];
-    var returnColors = ["#79CED7", "#66AFB2", "#C96A23", "#D3D1C5", "#F5821F"];
+    var returnColors = ["#C96A23", "#66AFB2", "#D3D1C5", "#F5821F","#79CED7"];
+    //var returnColors = ["#FFC20E","#DA2128","#000000","#00529B","#B2BABF"];
     var nflColors = ["#013369","#D50A0A"];
     //var teamFound = false;
     var i = 0;
@@ -162,6 +163,8 @@ function makeGraphs(error, nflData2017) {
     //Calculate metrics
     var numPlaysByDate = weekDim.group();
     var totalYardsByDate = weekDim.group().reduceSum(function(d) { return d.YardsGained });
+    var numRunPlaysByDate = weekDim.group().reduceSum(function(d) {return d.PlayType=="Run"});
+    var numPassPlaysByDate = weekDim.group().reduceSum(function(d) {return d.PlayType=="Pass"});
     var timeUnderGroup = timeUnderDim.group();
     var quarterGroup = quarterDim.group();
     var passLocation = passLocationDim.group();
@@ -216,7 +219,8 @@ function makeGraphs(error, nflData2017) {
 
     //console.log ("Pass/Rush:"+passOrRushSelectField.filter());
 
-    var colorScheme = ["#79CED7", "#66AFB2", "#C96A23", "#D3D1C5", "#F5821F"];
+    var colorScheme = ["#C96A23", "#66AFB2", "#D3D1C5", "#F5821F","#79CED7"];
+    //var colorScheme = ["#FFC20E","#DA2128","#000000","#00529B","#B2BABF"]; //base colors
     var currentTeam = null;
 
 
@@ -284,9 +288,10 @@ function makeGraphs(error, nflData2017) {
 
     playsChart
         //.ordinalColors(colorScheme)
-        .width(window.innerWidth-50)
+        .width(window.innerWidth/2-10)
+        //.width(900)
         .height(300)
-        .margins({top: 30, right: 20, bottom: 30, left: 50})
+        .margins({top: 30, right: 50, bottom: 30, left: 50})
         .dimension(dateDim)
         .transitionDuration(500)
         //.x(d3.time.scale().domain([minDate, maxDate]))
@@ -294,7 +299,7 @@ function makeGraphs(error, nflData2017) {
         .elasticY(true)
         .legend(dc.legend()
             .legendText(function (d,i) {
-                legendArray = ["Yards","Plays"];
+                legendArray = ["Run","Pass"];
                 return legendArray[i];
             })
             .horizontal(true)
@@ -304,7 +309,8 @@ function makeGraphs(error, nflData2017) {
         //.xAxisLabel("Week")
         .compose([
             dc.lineChart(playsChart)
-                .group(numPlaysByDate)
+                //.group(numPlaysByDate)
+                .group(numRunPlaysByDate)
                 .ordinalColors(colorScheme)
                 .renderArea(true)
                 /*.on('preRender', function(playsChart) {
@@ -328,7 +334,8 @@ function makeGraphs(error, nflData2017) {
                     //playsChart.ordinalColors([getTeamColors(currentTeam)[0]]);
                 }),
             dc.lineChart(playsChart)
-                .group(totalYardsByDate)
+                //.group(totalYardsByDate)
+                .group(numPassPlaysByDate)
                 .ordinalColors(colorScheme)
                 .renderArea(true)
                 /*.on('preRedraw', function(playsChart) {
@@ -389,7 +396,7 @@ function makeGraphs(error, nflData2017) {
 
     yardsChart
         .ordinalColors(colorScheme)
-        .width(1200)
+        .width(window.innerWidth/2-10)
         .height(300)
         .margins({top: 30, right: 50, bottom: 30, left: 50})
         .dimension(dateDim)
