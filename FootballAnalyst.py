@@ -13,7 +13,8 @@ app = Flask(__name__)
 
 MONGO_URI = os.getenv('MONGODB_URI','mongodb://ds129010.mlab.com:29010')
 DBS_NAME = os.getenv('MONGO_DB_NAME','heroku_51gxnjkc')
-PBP_2017_COLLECTION_NAME = 'pbp_2017'
+#PBP_2017_COLLECTION_NAME = 'pbp_2017'
+PBP_2017_COLLECTION_NAME = 'pbp_2017_pass_run'
 ROSTERS_2017_COLLECTION_NAME = 'rosters_2017'
 
 
