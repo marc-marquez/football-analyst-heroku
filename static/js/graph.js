@@ -305,6 +305,7 @@ function makeGraphs(error, nflData2017) {
         .yAxisLabel("Total Plays")
         .elasticY(true)
         .useViewBoxResizing(true)
+        .brushOn(false)
         .legend(dc.legend()
             .legendText(function (d,i) {
                 legendArray = ["Run","Pass"];
@@ -416,6 +417,7 @@ function makeGraphs(error, nflData2017) {
         .x(d3.scale.linear().domain([minDate, maxDate]))
         .elasticY(true)
         .useViewBoxResizing(true)
+        .brushOn(false)
         .xAxisLabel("Week")
         .yAxisLabel("Total Yards")
         .on('preRedraw', function(yardsChart) {
