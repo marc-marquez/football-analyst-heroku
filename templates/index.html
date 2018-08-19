@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="{{url_for ('static', filename='lib/css/introjs.css')}}" />
 </head>
 <body class="application">
-  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-step="1" data-intro="Welcome to the Football Analyst Tool. This guide will show you how to navigate the tool and get the information you want. Let's get started!" style="font-weight: normal" data-position="bottom">
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-step="1" data-intro="Welcome to the Football Analyst Tool. This guide will show you how to navigate the different graphs, apply filters, and interpret the information so you can dominate the competition. During the tour, Team selection and Play Type selection are DISABLED. Let's get started!" style="font-weight: normal" data-position="bottom-right-aligned">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="./">Football Analyst</a>
@@ -27,7 +27,7 @@
     <div class="row">
       <!-- team select -->
       <div class="col-sm-3">
-        <div class="chart-wrapper" data-step="2" data-intro="Select the team you would like to focus on or leave it unseleced to use all teams." style="font-weight: normal" data-position="bottom">
+        <div class="chart-wrapper" data-step="2" data-intro="Select the team you would like to focus on or use select all to see the entire league." style="font-weight: normal" data-position="bottom" data-disable-interaction="true">
           <div class="chart-title">
             Team
           </div>
@@ -39,7 +39,7 @@
       <!-- team select -->
       <!-- pass/rush select -->
       <div class="col-sm-3">
-        <div class="chart-wrapper" data-step="3" data-intro="Run or Pass? Select the type of play you would like to focus on. Leave it unselected if you want all plays." style="font-weight: normal" data-position="bottom">
+        <div class="chart-wrapper" data-step="3" data-intro="Run or Pass? Select the type of play you would like to focus on. Use select all to see both." style="font-weight: normal" data-position="bottom" data-disable-interaction="true">
           <div class="chart-title">
             Play Type
           </div>
@@ -51,7 +51,7 @@
       <!-- pass/rush select -->
       <!-- Total Plays -->
       <div class="col-sm-3">
-        <div class="chart-wrapper" data-step="4" data-intro="This keeps track of the number of plays based on your filters." style="font-weight: normal" data-position="bottom">
+        <div class="chart-wrapper" data-step="4" data-intro="The Total Plays tracker keeps a running counter of the plays run based on current filters. More on filters later." style="font-weight: normal" data-position="bottom">
           <div class="chart-title">
             Total Plays
           </div>
@@ -70,7 +70,7 @@
       <!-- Total Plays -->
       <!-- Total Yards -->
       <div class="col-sm-3">
-        <div class="chart-wrapper" data-step="5" data-intro="This keeps track of the number of yards based on your filters." style="font-weight: normal" data-position="bottom">
+        <div class="chart-wrapper" data-step="5" data-intro="Similar to the previous tracker, the Total Yards tracker keeps a running counter of the yards gained based on current filters." style="font-weight: normal" data-position="bottom">
           <div class="chart-title">
             Total Yards
           </div>
@@ -109,7 +109,7 @@
     <div id="weeklyRow" class="row">
       <!-- Plays Chart -->
       <div class="col-sm-6">
-        <div class="chart-wrapper" data-step="6" data-intro="The weekly yards breakdown chart shows how many yards were gained during each game." style="font-weight: normal" data-position="bottom">
+        <div class="chart-wrapper" data-step="6" data-intro="The Weekly Yards chart breaks down how many yards were gained during each week of the season." style="font-weight: normal" data-position="bottom">
           <div class="chart-title">
             Weekly Yards
           </div>
@@ -119,7 +119,7 @@
         </div>
       </div>
       <div class="col-sm-6">
-        <div class="chart-wrapper" data-step="7" data-intro="The weekly plays breakdown chart shows how many pass/run plays were run during each game." style="font-weight: normal" data-position="bottom">
+        <div class="chart-wrapper" data-step="7" data-intro="The Weekly Plays chart breaks down how many plays were run during each week of the season." style="font-weight: normal" data-position="bottom">
           <div class="chart-title">
             Weekly Pass vs Run Plays
           </div>
@@ -133,12 +133,12 @@
       <!-- Plays Chart -->
       <!-- Down Row Chart -->
       <div class="col-sm-6">
-        <div class="chart-wrapper" data-step="8" data-intro="The downs bar chart show you how many plays were run during each down. Click on any of the bars to focus on a specific down or select multiple downs to expand your search." style="font-weight: normal" data-position="bottom">
+        <div class="chart-wrapper" data-step="8" data-intro="The Downs chart shows you how many plays were run during each down." style="font-weight: normal" data-position="bottom">
           <div class="chart-title">
             Down
           </div>
           <div class="chart-stage">
-            <div id="down-row-chart" style="width: 100%;"></div>
+            <div id="down-row-chart" style="width: 100%;" data-step="9" data-intro="Applying a filter: In each of the following bar and pie charts, you can narrow your focus of information. For example, click on the 1st down bar.  This will allow you to focus on plays run on first down. Select as many items as you want. Watch how other charts are affected by your filters." style="font-weight: normal" data-position="bottom"></div>
           </div>
         </div>
       </div>
@@ -157,7 +157,7 @@
       <!-- Time Row Chart -->
       <!-- Quarter Row Chart -->
       <div class="col-sm-6">
-        <div class="chart-wrapper" data-step="9" data-intro="The quarters bar chart show you how many plays were run during each quarter. Click on any of the bars to focus on that specific quarter or select multiple quarters to expand your search." style="font-weight: normal" data-position="bottom">
+        <div class="chart-wrapper" data-step="10" data-intro="The Quarters chart shows you how many plays were run during each quarter." style="font-weight: normal" data-position="bottom">
           <div class="chart-title">
             Quarter
           </div>
@@ -183,7 +183,7 @@
       <!-- Yards Chart -->
       <!-- Complete/Incomplete Pie Chart-->
       <div class="col-sm-4">
-        <div class="chart-wrapper" data-step="10" data-intro="The completions chart shows what percentage of passes were completed or imcomplete. Hover over the pie slice to see the actual number of attempted passes." style="font-weight: normal" data-position="bottom">
+        <div class="chart-wrapper" data-step="11" data-intro="The Completions chart shows what percentage of passes were completed or incomplete." style="font-weight: normal" data-position="bottom">
           <div class="chart-title">
             Complete/Incomplete Pass
           </div>
@@ -195,7 +195,7 @@
       <!-- Complete/Incomplete Pie Chart -->
       <!-- Pass Location Row Chart -->
       <div class="col-sm-4">
-        <div class="chart-wrapper" data-step="11" data-intro="The pass location chart shows where the passes were attempted. Click on the left bar chart to see how your results are affected." style="font-weight: normal" data-position="bottom">
+        <div class="chart-wrapper" data-step="12" data-intro="The Pass Location chart shows where on the field the passes were attempted." style="font-weight: normal" data-position="bottom">
           <div class="chart-title">
             Pass Location
           </div>
@@ -207,7 +207,7 @@
       <!-- Pass Location Row Chart -->
       <!-- Pass to Position Pie Chart -->
       <div class="col-sm-4">
-        <div class="chart-wrapper" data-step="12" data-intro="The pass to position breakdown chart shows the distribution of passes to the wide receiver, tight end, running back, or other positions (full back, elgible tackle, etc)." style="font-weight: normal" data-position="bottom">
+        <div class="chart-wrapper" data-step="13" data-intro="The Pass to Position Chart shows the distribution of passes to the wide receiver, tight end, running back, or other positions (full back, etc)." style="font-weight: normal" data-position="bottom">
           <div class="chart-title">
             Pass to Position Breakdown
           </div>
@@ -233,7 +233,7 @@
     <div id="runRow" class="row">   
       <!-- Run Location Row Chart -->
       <div class="col-sm-6">
-        <div class="chart-wrapper" data-step="13" data-intro="The run location chart shows which direction the run was going." style="font-weight: normal" data-position="bottom">
+        <div class="chart-wrapper" data-step="14" data-intro="The Run Location chart shows which direction on the field the run was going." style="font-weight: normal" data-position="bottom">
           <div class="chart-title">
             Run Location
           </div>
@@ -245,7 +245,7 @@
       <!-- Run Location Row Chart -->
       <!-- Run Gap Row Chart -->
       <div class="col-sm-6">
-        <div class="chart-wrapper"  data-step="14" data-intro="The run gap chart illustrates where on the offensive line the run was going. Want to see which runs went over the left guard? Click on the guard bar in this chart and the left bar in the run location chart." style="font-weight: normal" data-position="bottom">
+        <div class="chart-wrapper"  data-step="15" data-intro="The Run Gap chart shows where on the offensive line the run was going. TIP: Want to see which runs went over the left guard? Click on the guard bar in this chart and the left bar in the run location chart." style="font-weight: normal" data-position="bottom">
           <div class="chart-title">
             Run Gap
           </div>
