@@ -97,15 +97,15 @@ function makeGraphs(error, nflData2017) {
     var weekDim = ndx.dimension(function (d) {
         return d.Week;
     });
-    var timeUnderDim = ndx.dimension(function (d) {
+    /*var timeUnderDim = ndx.dimension(function (d) {
            return d.TimeUnder;
-    });
+    });*/
     var quarterDim = ndx.dimension(function (d) {
            return d.qtr;
     });
-    var playAttemptedDim = ndx.dimension(function (d) {
+    /*var playAttemptedDim = ndx.dimension(function (d) {
         return d.PlayAttempted;
-    });
+    });*/
     var passLocationDim = ndx.dimension(function (d) {
         //if (d.PassLocation != 'NA'){
             return d.PassLocation;
