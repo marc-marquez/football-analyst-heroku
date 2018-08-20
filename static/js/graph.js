@@ -90,9 +90,9 @@ function makeGraphs(error, nflData2017) {
     var ndx = crossfilter(nflData2017);
 
     //Define Dimensions
-    var dateDim = ndx.dimension(function (d) {
+    /*var dateDim = ndx.dimension(function (d) {
         return d.Date;
-    });
+    });*/
     //console.log(dateDim.bottom(10));
     var weekDim = ndx.dimension(function (d) {
         return d.Week;
