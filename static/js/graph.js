@@ -76,14 +76,14 @@ function makeGraphs(error, nflData2017) {
     }
 
     //Convert each date string to datetime format
-    var dateFormat = d3.time.format("%m/%d/%y");
+    //var dateFormat = d3.time.format("%m/%d/%y");
     //var timeFormat = d3.time.format("%M:%S")
-    nflData2017.forEach(function (d) {
+    /*nflData2017.forEach(function (d) {
         d.Date = dateFormat.parse(d.Date);
         //d.time = timeFormat.parse(d.time);
         //d["GameDate"].setHours(0);
         //d["Yards"] = +d["Yards"];
-    });
+    });*/
 
 
     //Create a Crossfilter instance
