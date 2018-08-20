@@ -14,8 +14,8 @@ app = Flask(__name__)
 MONGO_URI = os.getenv('MONGODB_URI','mongodb://ds129010.mlab.com:29010')
 DBS_NAME = os.getenv('MONGO_DB_NAME','heroku_51gxnjkc')
 #PBP_2017_COLLECTION_NAME = 'pbp_2017'
-PBP_2017_COLLECTION_NAME = 'pbp_2017_pass_run_only'
-#PBP_2017_COLLECTION_NAME = 'pbp_2017_pass_run_less_rows'
+#PBP_2017_COLLECTION_NAME = 'pbp_2017_pass_run_only'
+PBP_2017_COLLECTION_NAME = 'pbp_2017_pass_run_bare_min'
 ROSTERS_2017_COLLECTION_NAME = 'rosters_2017'
 
 
@@ -90,14 +90,14 @@ def nfl_data():
                     "_id": 0,
                     "GameID": 1,
                     "posteam":1,
-                    "Date":1,
+                    #"Date":1,
                     "Week":1,
-                    "TimeUnder":1,
-                    "DefensiveTeam":1,
+                    #"TimeUnder":1,
+                    #"DefensiveTeam":1,
                     "YardsGained":1,
-                    "PlayAttempted":1,
-                    "PassAttempt":1,
-                    "RushAttempt":1,
+                    #"PlayAttempted":1,
+                    #"PassAttempt":1,
+                    #"RushAttempt":1,
                     "PassLocation":1,
                     "PassOutcome":1,
                     "RunLocation":1,

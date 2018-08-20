@@ -107,9 +107,9 @@ function makeGraphs(error, nflData2017) {
         return d.PlayAttempted;
     });
     var passLocationDim = ndx.dimension(function (d) {
-        if (d.PassLocation != 'NA'){
+        //if (d.PassLocation != 'NA'){
             return d.PassLocation;
-        } /* else {
+        /*}  else {
             return d.PassLocation;
         }
         return d.PassLocation;*/
@@ -129,9 +129,9 @@ function makeGraphs(error, nflData2017) {
         return d.RushAttempt;
     });*/
     var passOutcomeDim = ndx.dimension(function (d) {
-        if (d.PassOutcome != 'NA') {
+        //if (d.PassOutcome != 'NA') {
             return d.PassOutcome;
-        }
+        //}
         //return d.PassOutcome;
     });
     var positionDim = ndx.dimension(function (d) {
