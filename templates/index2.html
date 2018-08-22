@@ -2,6 +2,9 @@
 <html>
 <head>
   <title>Football Analyst</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/keen-dashboards.css')}}">
   <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/dc.css')}}">
@@ -9,8 +12,8 @@
   <link rel="stylesheet" href="{{url_for ('static', filename='lib/css/introjs.css')}}" />
   <link rel="stylesheet" href="{{url_for ('static', filename='lib/css/normalize.css')}}" />
 </head>
-<body class="application">
-  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-step="1" data-intro="Welcome to the Football Analyst Tool. This guide will show you how to navigate the different graphs, apply filters, and interpret the information so you can dominate the competition. During the tour, Team selection and Play Type selection are DISABLED. Let's get started!" style="font-weight: normal" data-position="bottom-right-aligned">
+<body id="fullbody" class="application">
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-step="1" data-intro="Welcome to the Football Analyst Tool. This guide will show you how to navigate the different graphs, apply filters, and interpret the information so you can dominate the competition. During the tour, Team selection and Play Type selection are DISABLED. Let's get started!" style="font-weight: normal" data-position="bottom">
     <div class="container-fluid">
       <a class="navbar-brand" href="./">Football Analyst</a>
       <div class="navbar-header">
@@ -19,82 +22,84 @@
       </div>
     </div>
   </div>
-  <div  id="outer" class="container-fluid">
+  <div id="outer" class="container-fluid">
     <div class="row">
       <div id="left" class="col-md-2">
-        <!-- team select -->
-        <div class="col-sm">
-            <div class="chart-wrapper" data-step="0" data-intro="Select the team you would like to focus on or use select all to see the entire league." style="font-weight: normal" data-position="bottom" data-disable-interaction="true">
-              <div class="chart-title">
-                Team
-              </div>
-              <div class="chart-stage">
-                <div id="team-menu-select" style="width: 100%"></div>
-              </div>
+        <div id="selectionsRow" class="row">
+            <!-- team select -->
+            <div class="col-sm">
+                <div class="chart-wrapper" data-step="0" data-intro="Select the team you would like to focus on or use select all to see the entire league." style="font-weight: normal" data-position="bottom" data-disable-interaction="true">
+                  <div class="chart-title">
+                    Team
+                  </div>
+                  <div class="chart-stage">
+                    <div id="team-menu-select" style="width: 100%"></div>
+                  </div>
+                </div>
             </div>
-        </div>
-        <!-- team select -->
-        <!-- pass/rush select -->
-        <div class="col-sm">
-            <div class="chart-wrapper" data-step="0" data-intro="Run or Pass? Select the type of play you would like to focus on. Use select all to see both." style="font-weight: normal" data-position="bottom" data-disable-interaction="true">
-              <div class="chart-title">
-                Play Type
-              </div>
-              <div class="chart-stage">
-                <div id="pass-or-rush-menu-select" style="width: 100%"></div>
-              </div>
+            <!-- team select -->
+            <!-- pass/rush select -->
+            <div class="col-sm">
+                <div class="chart-wrapper" data-step="0" data-intro="Run or Pass? Select the type of play you would like to focus on. Use select all to see both." style="font-weight: normal" data-position="bottom" data-disable-interaction="true">
+                  <div class="chart-title">
+                    Play Type
+                  </div>
+                  <div class="chart-stage">
+                    <div id="pass-or-rush-menu-select" style="width: 100%"></div>
+                  </div>
+                </div>
             </div>
-        </div>
-        <!-- pass/rush select -->
-        <!-- Total Plays -->
-        <div class="col-sm">
-            <div class="chart-wrapper" data-step="0" data-intro="The Total Plays tracker keeps a running counter of the plays run based on current filters. More on filters later." style="font-weight: normal" data-position="bottom">
-              <div class="chart-title">
-                Total Plays
-              </div>
-              <div class="chart-stage" style="background: #33CC99;
-                position: relative;
-                font-size: 29px;
-                color: white;
-                vertical-align: middle;
-                text-align: center;
-                padding-top: 12px;
-                padding-bottom: 0px;">
-                <div id="number-plays-nd"></div>
-              </div>
+            <!-- pass/rush select -->
+            <!-- Total Plays -->
+            <div class="col-sm">
+                <div class="chart-wrapper" data-step="0" data-intro="The Total Plays tracker keeps a running counter of the plays run based on current filters. More on filters later." style="font-weight: normal" data-position="bottom">
+                  <div class="chart-title">
+                    Total Plays
+                  </div>
+                  <div class="chart-stage" style="background: #33CC99;
+                    position: relative;
+                    font-size: 29px;
+                    color: white;
+                    vertical-align: middle;
+                    text-align: center;
+                    padding-top: 12px;
+                    padding-bottom: 0px;">
+                    <div id="number-plays-nd"></div>
+                  </div>
+                </div>
             </div>
-        </div>
-        <!-- Total Plays -->
-        <!-- Total Yards -->
-        <div class="col-sm">
-            <div class="chart-wrapper" data-step="0" data-intro="Similar to the previous tracker, the Total Yards tracker keeps a running counter of the yards gained based on current filters." style="font-weight: normal" data-position="bottom">
-              <div class="chart-title">
-                Total Yards
-              </div>
-              <div class="chart-stage" style="background: #33CC99;
-                position: relative;
-                font-size: 29px;
-                color: white;
-                vertical-align: middle;
-                text-align: center;
-                padding-top: 12px;
-                padding-bottom: 0px;">
-                <div id="total-yards-nd"></div>
-              </div>
+            <!-- Total Plays -->
+            <!-- Total Yards -->
+            <div class="col-sm">
+                <div class="chart-wrapper" data-step="0" data-intro="Similar to the previous tracker, the Total Yards tracker keeps a running counter of the yards gained based on current filters." style="font-weight: normal" data-position="bottom">
+                  <div class="chart-title">
+                    Total Yards
+                  </div>
+                  <div class="chart-stage" style="background: #33CC99;
+                    position: relative;
+                    font-size: 29px;
+                    color: white;
+                    vertical-align: middle;
+                    text-align: center;
+                    padding-top: 12px;
+                    padding-bottom: 0px;">
+                    <div id="total-yards-nd"></div>
+                  </div>
+                </div>
             </div>
-        </div>
-        <!-- Total Yards -->
-        <br>
-        <div class="col-md hidden-sm hidden-xs">
-            <div style="width: 100%" align="center">
-                <img id="logo" src="/static/img/NFL.svg" width="75%" height="75%">
+            <!-- Total Yards -->
+            <br>
+            <div class="col-md hidden-sm hidden-xs">
+                <div style="width: 100%" align="center">
+                    <img id="logo" src="/static/img/NFL.svg" width="75%" height="75%">
+                </div>
             </div>
         </div>
       </div>
       <div id="right" class="col-md-offset-2">
-        <!--div id="weeklyRow" class="row"-->
+        <div id="weekAndDown" class="row">
           <!-- Weekly Yards Chart -->
-          <div class="col-md-8">
+          <div class="col-md-8 col-sm-12">
             <div class="chart-wrapper" data-step="6" data-intro="The Weekly Yards chart breaks down how many yards were gained during each week of the season." style="font-weight: normal" data-position="bottom">
               <div class="chart-title">
                 Weekly Yards
@@ -106,7 +111,7 @@
           </div>
           <!-- Weekly Yards Chart -->
           <!-- Down Row Chart -->
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-12">
             <div class="chart-wrapper" data-step="8" data-intro="The Downs chart shows you how many plays were run during each specific down." style="font-weight: normal" data-position="bottom">
               <div class="chart-title">
                 Down
@@ -117,8 +122,10 @@
             </div>
           </div>
           <!-- Down Row Chart -->
+        </div>
+        <div id="playsAndQtrRow" class="row">
           <!-- Weekly Plays Chart -->
-          <div class="col-md-8">
+          <div class="col-md-8 col-sm-12">
             <div class="chart-wrapper" data-step="7" data-intro="The Weekly Plays chart breaks down how many plays were run during each week of the season." style="font-weight: normal" data-position="bottom">
               <div class="chart-title">
                 Weekly Pass vs Run Plays
@@ -130,7 +137,7 @@
           </div>
           <!-- Weekly Plays Chart -->
           <!-- Quarter Row Chart -->
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-12">
             <div class="chart-wrapper" data-step="10" data-intro="The Quarters chart shows you how many plays were run during each specific quarter." style="font-weight: normal" data-position="bottom">
               <div class="chart-title">
                 Quarter
@@ -141,7 +148,7 @@
             </div>
           </div>
           <!-- Quarter Row Chart -->
-        <!--/div-->
+        </div>
         <!--div id="DownQuarterRow" class="row"-->
 
           <!-- Time Row Chart -->
@@ -160,7 +167,7 @@
           <!-- Time Row Chart -->
 
         <!--/div-->
-        <div id="passRow">
+        <div id="passRow" class="row">
           <!-- Yards Chart -->
           <!--div class="col-sm-9">
             <div class="chart-wrapper">
@@ -174,7 +181,7 @@
           </div-->
           <!-- Yards Chart -->
           <!-- Complete/Incomplete Pie Chart-->
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-12">
             <div class="chart-wrapper" data-step="11" data-intro="The Completions chart shows what percentage of passes were completed or incomplete." style="font-weight: normal" data-position="bottom">
               <div class="chart-title">
                 Complete/Incomplete Pass
@@ -186,7 +193,7 @@
           </div>
           <!-- Complete/Incomplete Pie Chart -->
           <!-- Pass Location Row Chart -->
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-12">
             <div class="chart-wrapper" data-step="12" data-intro="The Pass Location chart shows where on the field the passes were attempted." style="font-weight: normal" data-position="bottom">
               <div class="chart-title">
                 Pass Location
@@ -198,7 +205,7 @@
           </div>
           <!-- Pass Location Row Chart -->
           <!-- Pass to Position Pie Chart -->
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-12">
             <div class="chart-wrapper" data-step="13" data-intro="The Pass to Position Chart shows the distribution of passes to the wide receiver, tight end, running back, or other positions (full back, etc)." style="font-weight: normal" data-position="bottom">
               <div class="chart-title">
                 Pass to Position Breakdown
@@ -222,9 +229,9 @@
           </div-->
           <!-- Air Yards Row Chart -->
         </div>
-        <div id="runRow">
+        <div id="runRow" class="row">
           <!-- Run Location Row Chart -->
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-12">
             <div class="chart-wrapper" data-step="14" data-intro="The Run Location chart shows which direction on the field the run was going." style="font-weight: normal" data-position="bottom">
               <div class="chart-title">
                 Run Location
@@ -236,7 +243,7 @@
           </div>
           <!-- Run Location Row Chart -->
           <!-- Run Gap Row Chart -->
-          <div class="col-md-4">
+          <div class="col-md-4 col-sm-12">
             <div class="chart-wrapper"  data-step="15" data-intro="The Run Gap chart shows where on the offensive line the run was going. TIP: Want to see which runs went over the left guard? Click on the guard bar in this chart and the left bar in the run location chart." style="font-weight: normal" data-position="bottom">
               <div class="chart-title">
                 Run Gap
