@@ -15,7 +15,7 @@ MONGO_URI = os.getenv('MONGODB_URI','mongodb://ds129010.mlab.com:29010')
 DBS_NAME = os.getenv('MONGO_DB_NAME','heroku_51gxnjkc')
 #PBP_2017_COLLECTION_NAME = 'pbp_2017'
 #PBP_2017_COLLECTION_NAME = 'pbp_2017_pass_run_only'
-PBP_2017_COLLECTION_NAME = 'pbp_2017_pass_run_bare_min_merged'
+PBP_2017_COLLECTION_NAME = 'pbp_2017_bare_min_merged'
 #ROSTERS_2017_COLLECTION_NAME = 'rosters_2017'
 
 
