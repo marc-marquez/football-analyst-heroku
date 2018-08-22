@@ -1,0 +1,115 @@
+#number-projects-nd {
+   font-size: 60px;
+}
+
+#total-donations-nd {
+   font-size: 60px;
+}
+
+.dc-chart g.row text {
+   fill: black;
+   font-size: 12px;
+}
+
+#position-chart path {
+   stroke: white;
+   stroke-width: 4;
+}
+
+#complete-chart path {
+   stroke: white;
+   stroke-width: 4;
+}
+
+#total-projects {
+   background: #33CC99;
+   width: 200px;
+   position: relative;
+   height: 60px;
+   font-size: 29px;
+   color: white;
+   vertical-align: middle;
+   text-align: center;
+   padding-top: 12px;
+   padding-bottom: 0px;
+}
+
+#net-donations {
+   background: #33CC99;
+   width: 200px;
+   position: relative;
+   height: 60px;
+   font-size: 29px;
+   color: white;
+   vertical-align: middle;
+   text-align: center;
+   padding-top: 12px;
+   padding-bottom: 0px;
+}
+
+
+.dc-select-menu {
+   background: #33CC99;
+   width: 80%;
+   border: none;
+   position: relative;
+   height: 31px;
+   font-size: 15px;
+   color: white;
+   vertical-align: middle;
+   text-align: center;
+   padding-top: 4px;
+   padding-bottom: 0px;
+
+}
+
+/*svg.attr {
+    width: 100%;
+    height: 100%;
+    viewBox: 0 0 320 300;
+}*/
+
+/*.introjs-fixParent {
+  position: absolute;
+}*/
+
+@media (min-width: 992px){
+   #left {
+      position: fixed;
+      top: 60px;
+      bottom: 0;
+   }
+   #right {
+      top: 0;
+   }
+}
+
+/*.introjs-helperLayer {
+     background: transparent;
+ }
+
+ .introjs-overlay {
+     display: none;
+ }
+
+ .introjs-helperLayer:before {
+     opacity: 0;
+     content: '';
+     position: fixed;
+     width: inherit;
+     height: inherit;
+     border-radius: 0.5em;
+     border: .2em solid rgba(255, 217, 68, 0.8);
+     box-shadow: 0 0 0 1000em rgba(0,0,0, .7);
+     opacity: 1;
+ }
+
+ .introjs-helperLayer:after {
+     content: '';
+     left: 0;
+     right: 0;
+     top: 0;
+     bottom: 0;
+     position: fixed;
+     z-index: 1000;
+ }*/
