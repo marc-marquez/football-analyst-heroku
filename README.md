@@ -17,6 +17,7 @@ Each of these pages were tested for:
 * Layout, image, and font responsiveness to browser width and height resolutions.
 * Button and Menu selections.
 * Graph transitioning, redrawing, and rerendering due to user choices in the menu and/or other graphs
+* Tutorial walkthrough
 
 
 ## Deployment
@@ -25,12 +26,13 @@ Each of these pages were tested for:
 
 ## Built With
 
-* [Flask 0.12.2]
-* [Pymongo 3.6.1]
-* [Gunicorn 19.9.0]
-* [DC.js 2.1.0]
-* [D3.js 3.5.3]
-* [Crossfilter.js 1.3.5]
+* [Flask 0.12.2](http://flask.pocoo.org/)
+* [Pymongo 3.6.1](https://api.mongodb.com/python/current/)
+* [Gunicorn 19.9.0](http://gunicorn.org/)
+* [DC.js 2.1.0](https://dc-js.github.io/dc.js/) - Dimensional Charting
+* [D3.js 3.5.3](https://d3js.org/) - Data Driven Documents
+* [Crossfilter.js 1.3.5](http://square.github.io/crossfilter/) - Multidimensional Filtering and Charting
+* [Intro.js 2.9.3](https://introjs.com/) - Tutorial Overlay
 * [jQuery 3.2.1](http://code.jquery.com/) - Prerequisite for Bootstrap (CDN)
 * [PopperJS 1.12.9](https://popper.js.org/) - Prerequisite for Bootstrap (CDN)
 * [Bootstrap 3.3.7](https://getbootstrap.com/) - Grid system and layout
