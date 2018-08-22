@@ -95,7 +95,8 @@ function getTeamColors(team){
         "WAS": ["#FFC20F", "#7C1415", "#000000", "#693213"]
     };
 
-    var returnColors = ["#C96A23", "#66AFB2", "#D3D1C5", "#F5821F","#79CED7"];
+    //var returnColors = ["#C96A23", "#66AFB2", "#D3D1C5", "#F5821F","#79CED7"];
+    var returnColors = ["#013369","#D50A0A","#008000","#FFA500","#FFFF00"]
     var nflColors = ["#013369","#D50A0A"];
     //var i = 0;
 

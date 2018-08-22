@@ -82,6 +82,10 @@
    #right {
       top: 0;
    }
+   #selectionsRow {
+       margin-right: 5px;
+       margin-left: 5px;
+   }
 }
 
 #fullbody {
