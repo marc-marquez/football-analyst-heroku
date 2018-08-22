@@ -77,6 +77,18 @@ function getTeamColors(team){
     return returnColors;
 }
 
+function setTeamLogo(team){
+    var logo = document.getElementById("logo");
+
+    if (team){
+        logo.src = "/static/img/"+team+".svg";
+    }
+    else {
+        logo.src = "/static/img/NFL.svg";
+    }
+    console.log(logo.src)
+}
+
 function makeGraphs(error, nflData2017) {
     if (error) {
         console.error("makeGraphs error on receiving dataset:", error.statusText);
@@ -241,8 +253,8 @@ function makeGraphs(error, nflData2017) {
         .group(totalYards);
 
     playsChart
-        .height(300)
-        .margins({top: 30, right: 20, bottom: 30, left: 50})
+        .height(250)
+        .margins({top: 20, right: 20, bottom: 30, left: 50})
         .dimension(weekDim)
         .transitionDuration(500)
         .x(d3.scale.linear().domain([minWeek, maxWeek]))
@@ -264,11 +276,13 @@ function makeGraphs(error, nflData2017) {
             dc.lineChart(playsChart)
                 .group(numRunPlaysByWeekGroupSum)
                 .ordinalColors(colorScheme)
-                .renderArea(true),
+                .renderArea(false)
+                .xyTipsOn(true),
             dc.lineChart(playsChart)
                 .group(numPassPlaysByWeekGroupSum)
                 .ordinalColors(colorScheme)
-                .renderArea(true)
+                .renderArea(false)
+                .xyTipsOn(true)
         ])
         /*.on('pretransition', function(playsChart) {
             //console.log("Pretransition - playsChart...");
@@ -289,12 +303,12 @@ function makeGraphs(error, nflData2017) {
                 i++;
             });
         })
-        .yAxis().ticks(10);
+        .yAxis().ticks(5);
 
     yardsChart
         .ordinalColors(colorScheme)
-        .height(300)
-        .margins({top: 30, right: 20, bottom: 30, left: 50})
+        .height(250)
+        .margins({top: 10, right: 20, bottom: 30, left: 50})
         .dimension(weekDim)
         .group(totalYardsByWeekGroupSum)
         .xyTipsOn(true)
@@ -309,17 +323,18 @@ function makeGraphs(error, nflData2017) {
         .on('preRedraw', function(yardsChart) {
             currentTeam = offensiveTeamSelectField.filters()[0];
             yardsChart.ordinalColors(getTeamColors(currentTeam));
+            setTeamLogo(currentTeam);
         })
         .on('pretransition', function(yardsChart) {
             currentTeam = offensiveTeamSelectField.filters()[0];
             yardsChart.ordinalColors(getTeamColors(currentTeam));
         })
-        .yAxis().ticks(10);
+        .yAxis().ticks(5);
 
     passLocationChart
         .ordinalColors(colorScheme)
-        .height(300)
-        .margins({top: 10, right: 10, bottom: 30, left: 40})
+        .height(250)
+        .margins({top: 10, right: 10, bottom: 20, left: 40})
         .dimension(passLocationDim)
         .group(filteredPassLocationGroup)
         .labelOffsetX(-40)
@@ -347,7 +362,7 @@ function makeGraphs(error, nflData2017) {
 
     downChart
         .ordinalColors(colorScheme)
-        .height(300)
+        .height(250)
         .dimension(downDim)
         .group(downGroup)
         .labelOffsetX(-20)
@@ -375,7 +390,7 @@ function makeGraphs(error, nflData2017) {
 
     quarterChart
         .ordinalColors(colorScheme)
-        .height(300)
+        .height(250)
         .dimension(quarterDim)
         .group(quarterGroup)
         .labelOffsetX(-20)
@@ -472,7 +487,7 @@ function makeGraphs(error, nflData2017) {
 
     runLocationChart
         .ordinalColors(colorScheme)
-        .height(300)
+        .height(250)
         .margins({top: 10, right: 10, bottom: 30, left: 40})
         .dimension(runLocationDim)
         .group(filteredRunLocationGroup)
@@ -495,7 +510,7 @@ function makeGraphs(error, nflData2017) {
 
     runGapChart
         .ordinalColors(colorScheme)
-        .height(300)
+        .height(250)
         .margins({top: 10, right: 10, bottom: 30, left: 40})
         .dimension(runGapDim)
         .group(runGapGroupGroupSum)
@@ -518,7 +533,7 @@ function makeGraphs(error, nflData2017) {
 
     passOutcomeChart
         .ordinalColors(colorScheme)
-        .height(300)
+        .height(250)
         .radius(170)
         .innerRadius(25)
         .transitionDuration(1500)
@@ -554,7 +569,7 @@ function makeGraphs(error, nflData2017) {
 
     passToPositionChart
         .ordinalColors(colorScheme)
-        .height(300)
+        .height(250)
         .radius(170)
         .innerRadius(25)
         .transitionDuration(1500)
