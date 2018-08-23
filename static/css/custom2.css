@@ -89,11 +89,15 @@
 }
 
 #fullbody {
-    background: url("/static/img/50ydline.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: auto;
-    background-attachment: fixed;
+    background: url("/static/img/50ydline.jpg") center center;
+    width: 100%;
+    background-size: cover;
+}
+
+#outer {
+    /*background: url("/static/img/50ydline.jpg") center center;
+    width: 100%;
+    background-size: cover;*/
 }
 
 /*.introjs-helperLayer {
