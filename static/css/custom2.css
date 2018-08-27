@@ -42,12 +42,12 @@
        padding-left: 5px;
        padding-right: 5px;
    }
-   #fullbody {
+   /*#fullbody {
         background: url("/static/img/50ydline.jpg") center center;
         width: 100%;
         background-size: cover;
         background-attachment: fixed;
-   }
+   }*/
    #teamLogo {
        margin-top: 50px;
    }
