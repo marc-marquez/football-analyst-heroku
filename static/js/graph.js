@@ -355,6 +355,9 @@ function makeGraphs(error, nflData2017) {
         })
         .yAxis().ticks(5);
 
+    playsChart.renderVerticalGridLines(true);
+    playsChart.xAxis().ticks(maxWeek);
+
     yardsChart
         .ordinalColors(colorScheme)
         .height(250)
@@ -385,6 +388,9 @@ function makeGraphs(error, nflData2017) {
             yardsChart.ordinalColors(getTeamColors(currentTeam));
         })
         .yAxis().ticks(5);
+
+    yardsChart.renderVerticalGridLines(true);
+    yardsChart.xAxis().ticks(maxWeek);
 
     passLocationChart
         .ordinalColors(colorScheme)

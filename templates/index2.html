@@ -9,8 +9,8 @@
         <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/keen-dashboards.css')}}">
         <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/dc.css')}}">
         <link rel="stylesheet" href="{{ url_for ('static',filename='css/custom2.css')}}">
-        <link rel="stylesheet" href="{{url_for ('static', filename='lib/css/introjs.css')}}" />
-        <link rel="stylesheet" href="{{url_for ('static', filename='lib/css/normalize.css')}}" />
+        <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/introjs.css')}}" />
+        <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/normalize.css')}}" />
     </head>
     <body id="fullbody" class="application">
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-step="1" data-intro="Welcome to the Football Analyst Tool. This guide will show you how to navigate the different graphs, apply filters, and interpret the information so you can dominate the competition. During the tour, Team selection and Play Type selection are DISABLED. Let's get started!" style="font-weight: normal" data-position="bottom">
@@ -66,7 +66,7 @@
                                 color: white;
                                 vertical-align: middle;
                                 text-align: center;
-                                padding-top: 12px;
+                                padding-top: 0px;
                                 padding-bottom: 0px;">
                                 <div id="number-plays-nd"></div>
                               </div>
@@ -85,7 +85,7 @@
                                 color: white;
                                 vertical-align: middle;
                                 text-align: center;
-                                padding-top: 12px;
+                                padding-top: 0px;
                                 padding-bottom: 0px;">
                                 <div id="total-yards-nd"></div>
                               </div>
