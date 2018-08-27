@@ -60,3 +60,8 @@
     padding: 10px;
     background-color: #141C29;
 }
+
+.introjs-fixedTooltip {
+    background-color: transparent !important;
+}
+

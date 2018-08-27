@@ -9,12 +9,14 @@
         <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/keen-dashboards.css')}}">
         <link rel="stylesheet" href="{{ url_for ('static',filename='lib/css/dc.css')}}">
         <link rel="stylesheet" href="{{ url_for ('static',filename='css/custom2.css')}}">
-        <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/introjs.css')}}" />
-        <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/normalize.css')}}" />
+        <link rel="stylesheet" href="{{url_for ('static', filename='lib/css/introjs.css')}}" />
+        <link rel="stylesheet" href="{{url_for ('static', filename='lib/css/normalize.css')}}" />
+
+        <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet">
     </head>
     <body id="fullbody" class="application">
-        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" data-step="1" data-intro="Welcome to the Football Analyst Tool. This guide will show you how to navigate the different graphs, apply filters, and interpret the information so you can dominate the competition. During the tour, Team selection and Play Type selection are DISABLED. Let's get started!" style="font-weight: normal" data-position="bottom">
-            <div class="container-fluid">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid" data-step="1" data-intro="Welcome to the Football Analyst Tool. This guide will show you how to navigate the different graphs, apply filters, and interpret the information so you can dominate the competition. During the tour, Team selection and Play Type selection are DISABLED. Let's get started!" style="font-weight: normal" data-position="bottom">
                 <a class="navbar-brand" href="./">Football Analyst</a>
                 <div class="navbar-header">
                     <a href="javascript:dc.filterAll();dc.renderAll();setTeamLogo('NFL')" class="btn btn-info" role="button" style="margin-top: 7px">Reset All</a>
@@ -32,7 +34,7 @@
                     <div id="selectionsRow" class="row">
                         <!-- team select -->
                         <div class="col-sm">
-                            <div class="chart-wrapper" data-step="0" data-intro="Select the team you would like to focus on or use select all to see the entire league." style="font-weight: normal" data-position="bottom" data-disable-interaction="true">
+                            <div class="chart-wrapper" data-step="2" data-intro="Select the team you would like to focus on or use select all to see the entire league." style="font-weight: normal" data-position="bottom" data-disable-interaction="true">
                               <div class="chart-title">
                                 Team
                               </div>
@@ -44,7 +46,7 @@
                         <!-- team select -->
                         <!-- pass/rush select -->
                         <div class="col-sm">
-                            <div class="chart-wrapper" data-step="0" data-intro="Run or Pass? Select the type of play you would like to focus on. Use select all to see both." style="font-weight: normal" data-position="bottom" data-disable-interaction="true">
+                            <div class="chart-wrapper" data-step="3" data-intro="Run or Pass? Select the type of play you would like to focus on. Use select all to see both." style="font-weight: normal" data-position="bottom" data-disable-interaction="true">
                               <div class="chart-title">
                                 Play Type
                               </div>
@@ -56,7 +58,7 @@
                         <!-- pass/rush select -->
                         <!-- Total Plays -->
                         <div class="col-sm">
-                            <div class="chart-wrapper" data-step="0" data-intro="The Total Plays tracker keeps a running counter of the plays run based on current filters. More on filters later." style="font-weight: normal" data-position="bottom">
+                            <div class="chart-wrapper" data-step="4" data-intro="The Total Plays tracker keeps a running counter of the plays run based on current filters. More on filters later." style="font-weight: normal" data-position="bottom">
                               <div class="chart-title">
                                 Total Plays
                               </div>
@@ -75,7 +77,7 @@
                         <!-- Total Plays -->
                         <!-- Total Yards -->
                         <div class="col-sm">
-                            <div class="chart-wrapper" data-step="0" data-intro="Similar to the previous tracker, the Total Yards tracker keeps a running counter of the yards gained based on current filters." style="font-weight: normal" data-position="bottom">
+                            <div class="chart-wrapper" data-step="5" data-intro="Similar to the previous tracker, the Total Yards tracker keeps a running counter of the yards gained based on current filters." style="font-weight: normal" data-position="bottom">
                               <div class="chart-title">
                                 Total Yards
                               </div>
