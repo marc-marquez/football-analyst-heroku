@@ -14,7 +14,7 @@
 }
 
 .dc-select-menu {
-   background: #33CC99;
+   background: grey;
    width: 100%;
    border: none;
    position: relative;
@@ -47,7 +47,17 @@
    }
 }
 
-#fullbody {
+/*@media (max-width: 500px){
+    .introjs-helperNumberLayer {
+        left: 0px !important;
+        top: -10px !important;
+    }
+    .introjs-tooltip {
+        margin-top: 40px !important;
+    }
+}*/
+
+#fullBody {
     background-color: #141C29;
     font-family: 'Carrois Gothic SC', sans-serif;
 }
@@ -63,5 +73,16 @@
 
 .introjs-fixedTooltip {
     background-color: transparent !important;
+    border: 3px solid white !important;
 }
+
+.chart-wrapper {
+    border: 1px solid darkgrey;
+}
+
+.chart-wrapper .chart-title {
+    background-color: #5bc0de;
+    color: white;
+}
+
 

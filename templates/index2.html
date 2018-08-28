@@ -14,13 +14,13 @@
 
         <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC" rel="stylesheet">
     </head>
-    <body id="fullbody" class="application">
+    <body id="fullBody" class="application">
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container-fluid" data-step="1" data-intro="Welcome to the Football Analyst Tool. This guide will show you how to navigate the different graphs, apply filters, and interpret the information so you can dominate the competition. During the tour, Team selection and Play Type selection are DISABLED. Let's get started!" style="font-weight: normal" data-position="bottom">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="./">Football Analyst</a>
                 <div class="navbar-header">
                     <a href="javascript:dc.filterAll();dc.renderAll();setTeamLogo('NFL')" class="btn btn-info" role="button" style="margin-top: 7px">Reset All</a>
-                    <button class="btn btn-default" type="button" style="margin-top: 7px" onclick="javascript:introJs().start();">Start Tour!</button>
+                    <button class="btn btn-default" type="button" style="margin-top: 7px" onclick="javascript:introJs().start();" data-step="1" data-intro="Welcome to the Football Analyst Tool. This guide will show you how to navigate the different graphs, apply filters, and interpret the information so you can dominate the competition. During the tour, Team selection and Play Type selection are DISABLED. Let's get started!" style="font-weight: normal" data-position="bottom">Start Tour!</button>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
                               <div class="chart-title">
                                 Total Plays
                               </div>
-                              <div class="chart-stage" style="background: #33CC99;
+                              <div class="chart-stage" style="background: grey;
                                 position: relative;
                                 font-size: 29px;
                                 color: white;
@@ -81,7 +81,7 @@
                               <div class="chart-title">
                                 Total Yards
                               </div>
-                              <div class="chart-stage" style="background: #33CC99;
+                              <div class="chart-stage" style="background: grey;
                                 position: relative;
                                 font-size: 29px;
                                 color: white;
