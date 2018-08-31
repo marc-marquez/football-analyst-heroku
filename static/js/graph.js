@@ -169,7 +169,7 @@ function drawByeWeekLine (chart,bye) {
 
         var textLabel = text
             .attr("x",function(d){return d.x+7})
-            .attr("y",function(d){return d.y-chart.effectiveHeight()+5})
+            .attr("y",function(d){return d.y-chart.effectiveHeight()-10})
             .attr("id","oeText")
             .text(function(d){return "Bye Week";})
             .attr("font-family","Carrois Gothic SC")
