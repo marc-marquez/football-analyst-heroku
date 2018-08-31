@@ -24,42 +24,6 @@ function removeNAValues(source_group) {
 function getTeamColors(team){
     //Had to replace #FFFFFF with #DCDCDC to make white visible
 
-    //Try converting to dictionary
-    /*var teamColors = [
-        ["ARI",["#97233F","#FFB612","#000000"]],
-        ["ATL",["#A71930","#A5ACAF","#000000"]],
-        ["BAL",["#241773","#9E7C0C","#000000"]],
-        ["BUF",["#00338D","#C60C30"]],
-        ["CAR",["#0085CA","#BFC0BF","#000000"]],
-        ["CHI",["#F26522","#00143F"]],
-        ["CIN",["#FB4F14","#000000"]],
-        ["CLE",["#22150C","#FB4F14"]],
-        ["DAL",["#0C264C","#B0B7BC"]],
-        ["DEN",["#002244","#FB4F14"]],
-        ["DET",["#046EB4","#B0B7BC","#000000"]],
-        ["GB",["#24423C","#FCBE14"]],
-        ["HOU",["#00143F","#C9243F"]],
-        ["IND",["#003D79","#DCDCDC"]],
-        ["JAX",["#D8A328","#136677","#000000","#9E7A2C"]],
-        ["KC",["#CA2430","#FFB612","#000000"]],
-        ["LA",["#95774C","#002147"]],
-        ["LAC",["#0A2342","#2072BA","#FDB515"]],
-        ["MIA",["#0091A0","#FF8500","#002760"]],
-        ["MIN",["#4F2E84","#FEC62F","#000000"]],
-        ["NE",["#0A2342","#C81F32","#B0B7BD"]],
-        ["NO",["#A08A58","#000000"]],
-        ["NYG",["#192E6C","#B20032"]],
-        ["NYJ",["#203731","#DCDCDC"]],
-        ["OAK",["#C4C9CC","#000000"]],
-        ["PHI",["#014A53","#BBC4C9","#000000"]],
-        ["PIT",["#FFC20E","#DA2128","#000000","#00529B","#B2BABF"]],
-        ["SF",["#C9243F","#C8AA76","#000000"]],
-        ["SEA",["#002A5C","#7AC142","#B2B7BB","#2D5980"]],
-        ["TB",["#D40909","#B0B9BF","#000000","#FF7900"]],
-        ["TEN",["#4095D1","#00295B","#DA2128","#BCC4C9"]],
-        ["WAS",["#FFC20F","#7C1415","#000000","#693213"]]
-    ];*/
-
     var teamColors = {
         "ARI": ["#97233F", "#FFB612", "#000000"],
         "ATL": ["#A71930", "#A5ACAF", "#000000"],
@@ -95,25 +59,8 @@ function getTeamColors(team){
         "WAS": ["#FFC20F", "#7C1415", "#000000", "#693213"]
     };
 
-    //var returnColors = ["#C96A23", "#66AFB2", "#D3D1C5", "#F5821F","#79CED7"];
     var returnColors = ["#013369","#D50A0A","#008000","#FFA500","#FFFF00"]
     var nflColors = ["#013369","#D50A0A"];
-    //var i = 0;
-
-    /*while (i < teamColors.length){
-        if (teamColors[i][0] == team){
-            //if returnColors length < 5, append nfl default colors then return.
-           returnColors = teamColors[i][1];
-           if (returnColors.length < 5) {
-               returnColors.push(nflColors[0]);
-               returnColors.push(nflColors[1]);
-           }
-           break;
-        } else {
-           i++;
-        }
-    }
-    return returnColors;*/
 
     if(team){
         returnColors = teamColors[team];
@@ -136,7 +83,99 @@ function setTeamLogo(team){
     else {
         logo.src = "/static/img/NFL.svg";
     }
-    //console.log(logo.src)
+}
+
+/*Temporary function to get bye weeks for 2017.  Need to either import from database or use groupSum
+to figure out where the bye weeks are. Hint, you need to find where run and pass plays are zero for that
+week.
+ */
+function getTeamByeWeek(team){
+    var teamByeWeek = {
+        "ARI": 8,
+        "ATL": 5,
+        "BAL": 10,
+        "BUF": 6,
+        "CAR": 11,
+        "CHI": 9,
+        "CIN": 6,
+        "CLE": 9,
+        "DAL": 6,
+        "DEN": 5,
+        "DET": 7,
+        "GB": 8,
+        "HOU": 7,
+        "IND": 11,
+        "JAX": 8,
+        "KC": 10,
+        "LA": 8,
+        "LAC": 9,
+        "MIA": 1,
+        "MIN": 9,
+        "NE": 9,
+        "NO": 5,
+        "NYG": 8,
+        "NYJ": 11,
+        "OAK": 10,
+        "PHI": 10,
+        "PIT": 9,
+        "SF": 11,
+        "SEA": 6,
+        "TB": 1,
+        "TEN": 8,
+        "WAS": 5
+    };
+    return teamByeWeek[team];
+}
+
+function drawByeWeekLine (chart,bye) {
+    if(bye) {
+        var x_vert = bye;
+        var extra_data = [
+            {x: chart.x()(x_vert) + 62, y: 0},
+            {x: chart.x()(x_vert) + 62, y: chart.effectiveHeight() + 25}
+        ];
+        var line = d3.svg.line()
+            .x(function (d) {
+                return d.x;
+            })
+            .y(function (d) {
+                return d.y;
+            })
+            .interpolate('linear');
+
+        var chartBody = chart.select('g');
+
+        //Clear existing line
+        chartBody.selectAll("#oeLine").remove();
+
+        //Clear existing text
+        chartBody.selectAll("#oeText").remove();
+
+        var path = chartBody.selectAll('path.extra').data([extra_data]);
+
+        path = path.enter()
+            .append('path')
+            .attr('class', 'oeExtra')
+            .attr('stroke', 'red')
+            .attr('id', 'oeLine')
+            .attr("stroke-width", 1.5)
+            .style("stroke-dasharray", ("10,4"));
+        path.attr('d', line);
+
+        var text = chartBody.selectAll('#oeLine')
+            .data(extra_data)
+            .enter()
+            .append('text');
+
+        var textLabel = text
+            .attr("x",function(d){return d.x+7})
+            .attr("y",function(d){return d.y-chart.effectiveHeight()+5})
+            .attr("id","oeText")
+            .text(function(d){return "Bye Week";})
+            .attr("font-family","Carrois Gothic SC")
+            .attr("font-size","11px")
+            .attr("fill","red");
+    }
 }
 
 function makeGraphs(error, nflData2017) {
@@ -304,7 +343,7 @@ function makeGraphs(error, nflData2017) {
 
     playsChart
         .height(250)
-        .margins({top: 20, right: 20, bottom: 30, left: 50})
+        .margins({top: 30, right: 20, bottom: 30, left: 50})
         .dimension(weekDim)
         .transitionDuration(500)
         .x(d3.scale.linear().domain([minWeek, maxWeek]))
@@ -334,9 +373,6 @@ function makeGraphs(error, nflData2017) {
                 .renderArea(false)
                 .xyTipsOn(true)
         ])
-        /*.on('pretransition', function(playsChart) {
-            //console.log("Pretransition - playsChart...");
-        })*/
         .on('preRedraw', function(playsChart) {
             currentTeam = offensiveTeamSelectField.filters()[0];
             var i=0;
@@ -353,6 +389,10 @@ function makeGraphs(error, nflData2017) {
                 i++;
             });
         })
+        .on('pretransition', function(playsChart){
+            currentTeam = offensiveTeamSelectField.filters()[0];
+            drawByeWeekLine(playsChart,getTeamByeWeek(currentTeam));
+        })
         .yAxis().ticks(5);
 
     playsChart.renderVerticalGridLines(true);
@@ -361,7 +401,7 @@ function makeGraphs(error, nflData2017) {
     yardsChart
         .ordinalColors(colorScheme)
         .height(250)
-        .margins({top: 10, right: 20, bottom: 30, left: 50})
+        .margins({top: 30, right: 20, bottom: 30, left: 50})
         .dimension(weekDim)
         .group(totalYardsByWeekGroupSum)
         .xyTipsOn(true)
@@ -381,7 +421,7 @@ function makeGraphs(error, nflData2017) {
         .on('pretransition', function(yardsChart) {
             currentTeam = offensiveTeamSelectField.filters()[0];
             yardsChart.ordinalColors(getTeamColors(currentTeam));
-            //setTeamLogo(currentTeam);
+            drawByeWeekLine(yardsChart,getTeamByeWeek(currentTeam));
         })
         .on('preRender', function(yardsChart) {
             currentTeam = offensiveTeamSelectField.filters()[0];
