@@ -357,8 +357,8 @@ function makeGraphs(error, nflData2017) {
                 legendArray = ["Run","Pass"];
                 return legendArray[i];
             })
-            .horizontal(true)
-            .x(10)
+            .horizontal(false)
+            .x(1)
             .y(5)
         )
         .compose([
