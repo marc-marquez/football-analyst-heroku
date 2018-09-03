@@ -309,7 +309,7 @@ function makeGraphs(error, nflData2017) {
     var passToPositionChart = dc.pieChart("#position-chart");
     var downChart = dc.rowChart("#down-row-chart");
     var quarterChart = dc.rowChart("#quarter-row-chart");
-    var passLengthChart = dc.rowChart("#passlength-row-chart");
+    //var passLengthChart = dc.rowChart("#passlength-row-chart");
     var playTypeChart = dc.rowChart("#playtype-row-chart");
     var runLocationChart = dc.rowChart("#run-location-row-chart");
     var runGapChart = dc.rowChart("#run-gap-row-chart");
