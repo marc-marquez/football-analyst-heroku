@@ -236,9 +236,9 @@ function makeGraphs(error, nflData2017) {
     var downDim = ndx.dimension(function (d) {
        return d.down;
     });
-    var passLengthDim = ndx.dimension(function (d) {
+    /*var passLengthDim = ndx.dimension(function (d) {
         return d.PassLength;
-    });
+    });*/
     var offenseTeamDim = ndx.dimension(function (d) {
         return d.posteam;
     });
@@ -263,7 +263,7 @@ function makeGraphs(error, nflData2017) {
     var positionGroupSum = positionDim.group().reduceSum(function(d) {return d.PlayType=="Pass"});
     var downGroup = downDim.group();
     var playTypeGroup = playTypeDim.group();
-    var passLengthGroup = passLengthDim.group();
+    //var passLengthGroup = passLengthDim.group();
 
 
 
