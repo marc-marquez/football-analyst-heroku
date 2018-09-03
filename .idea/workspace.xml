@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8cbcef0d-900e-425b-80d7-f8d4d835ae31" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/static/css/custom2.css" afterPath="$PROJECT_DIR$/static/css/custom2.css" />
       <change beforePath="$PROJECT_DIR$/static/js/graph.js" afterPath="$PROJECT_DIR$/static/js/graph.js" />
       <change beforePath="$PROJECT_DIR$/templates/index2.html" afterPath="$PROJECT_DIR$/templates/index2.html" />
     </list>
@@ -14,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FootballAnalyst.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FootballAnalyst.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FootballAnalyst.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="32" column="47" lean-forward="false" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+            <state relative-caret-position="-266">
+              <caret line="14" column="55" lean-forward="true" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -59,8 +60,8 @@
       <file leaf-file-name="index2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/index2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="232" column="36" lean-forward="true" selection-start-line="232" selection-start-column="36" selection-end-line="232" selection-end-column="36" />
+            <state relative-caret-position="1479">
+              <caret line="251" column="36" lean-forward="true" selection-start-line="251" selection-start-column="36" selection-end-line="251" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -108,12 +109,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graph.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="graph.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/graph.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="4935">
+              <caret line="362" column="18" lean-forward="false" selection-start-line="362" selection-start-column="18" selection-end-line="362" selection-end-column="18" />
+              <folding>
+                <marker date="1535999715046" expanded="true" signature="18435:18437" ph="/*...*/" />
+                <marker date="1535999715046" expanded="true" signature="18633:18834" ph="/*...*/" />
+                <marker date="1535999715046" expanded="true" signature="18914:19061" ph="{...}" />
+                <marker date="1535999715046" expanded="true" signature="19114:19261" ph="{...}" />
+                <marker date="1535999715046" expanded="true" signature="19314:19461" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -154,9 +161,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="2040" />
-    <option name="y" value="262" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="2025" />
+    <option name="y" value="234" />
     <option name="width" value="1701" />
     <option name="height" value="997" />
   </component>
@@ -209,19 +216,6 @@
               <item name="football-analyst-heroku" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="football-analyst-heroku" type="b2602c69:ProjectViewProjectNode" />
-              <item name="football-analyst-heroku" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="football-analyst-heroku" type="b2602c69:ProjectViewProjectNode" />
-              <item name="football-analyst-heroku" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="football-analyst-heroku" type="b2602c69:ProjectViewProjectNode" />
@@ -317,7 +311,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2040" y="262" width="1701" height="997" extended-state="0" />
+    <frame x="2025" y="234" width="1701" height="997" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11111111" sideWeight="0.48824593" order="6" side_tool="false" content_ui="tabs" />
@@ -391,7 +385,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-          <folding />
+          <folding>
+            <marker date="1535999715046" expanded="true" signature="18435:18437" ph="/*...*/" />
+            <marker date="1535999715046" expanded="true" signature="18633:18834" ph="/*...*/" />
+            <marker date="1535999715046" expanded="true" signature="18914:19061" ph="{...}" />
+            <marker date="1535999715046" expanded="true" signature="19114:19261" ph="{...}" />
+            <marker date="1535999715046" expanded="true" signature="19314:19461" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -459,7 +459,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="22" lean-forward="true" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-          <folding />
+          <folding>
+            <marker date="1535999715046" expanded="true" signature="18435:18437" ph="/*...*/" />
+            <marker date="1535999715046" expanded="true" signature="18633:18834" ph="/*...*/" />
+            <marker date="1535999715046" expanded="true" signature="18914:19061" ph="{...}" />
+            <marker date="1535999715046" expanded="true" signature="19114:19261" ph="{...}" />
+            <marker date="1535999715046" expanded="true" signature="19314:19461" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -517,7 +523,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-          <folding />
+          <folding>
+            <marker date="1535999715046" expanded="true" signature="18435:18437" ph="/*...*/" />
+            <marker date="1535999715046" expanded="true" signature="18633:18834" ph="/*...*/" />
+            <marker date="1535999715046" expanded="true" signature="18914:19061" ph="{...}" />
+            <marker date="1535999715046" expanded="true" signature="19114:19261" ph="{...}" />
+            <marker date="1535999715046" expanded="true" signature="19314:19461" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -543,7 +555,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-          <folding />
+          <folding>
+            <marker date="1535999715046" expanded="true" signature="18435:18437" ph="/*...*/" />
+            <marker date="1535999715046" expanded="true" signature="18633:18834" ph="/*...*/" />
+            <marker date="1535999715046" expanded="true" signature="18914:19061" ph="{...}" />
+            <marker date="1535999715046" expanded="true" signature="19114:19261" ph="{...}" />
+            <marker date="1535999715046" expanded="true" signature="19314:19461" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -569,7 +587,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="21" lean-forward="true" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
-          <folding />
+          <folding>
+            <marker date="1535999715046" expanded="true" signature="18435:18437" ph="/*...*/" />
+            <marker date="1535999715046" expanded="true" signature="18633:18834" ph="/*...*/" />
+            <marker date="1535999715046" expanded="true" signature="18914:19061" ph="{...}" />
+            <marker date="1535999715046" expanded="true" signature="19114:19261" ph="{...}" />
+            <marker date="1535999715046" expanded="true" signature="19314:19461" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -616,7 +640,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="34" lean-forward="false" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-          <folding />
+          <folding>
+            <marker date="1535999715046" expanded="true" signature="18435:18437" ph="/*...*/" />
+            <marker date="1535999715046" expanded="true" signature="18633:18834" ph="/*...*/" />
+            <marker date="1535999715046" expanded="true" signature="18914:19061" ph="{...}" />
+            <marker date="1535999715046" expanded="true" signature="19114:19261" ph="{...}" />
+            <marker date="1535999715046" expanded="true" signature="19314:19461" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -720,16 +750,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FootballAnalyst.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="32" column="47" lean-forward="false" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/lib/css/normalize.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1161">
@@ -752,17 +772,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="232" column="36" lean-forward="true" selection-start-line="232" selection-start-column="36" selection-end-line="232" selection-end-column="36" />
+        <state relative-caret-position="1479">
+          <caret line="251" column="36" lean-forward="true" selection-start-line="251" selection-start-column="36" selection-end-line="251" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/js/graph.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="4935">
+          <caret line="362" column="18" lean-forward="false" selection-start-line="362" selection-start-column="18" selection-end-line="362" selection-end-column="18" />
+          <folding>
+            <marker date="1535999715046" expanded="true" signature="18435:18437" ph="/*...*/" />
+            <marker date="1535999715046" expanded="true" signature="18633:18834" ph="/*...*/" />
+            <marker date="1535999715046" expanded="true" signature="18914:19061" ph="{...}" />
+            <marker date="1535999715046" expanded="true" signature="19114:19261" ph="{...}" />
+            <marker date="1535999715046" expanded="true" signature="19314:19461" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FootballAnalyst.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-266">
+          <caret line="14" column="55" lean-forward="true" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
