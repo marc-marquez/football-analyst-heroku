@@ -106,9 +106,9 @@
     top: 50%;
     z-index: 1;
     width: 300px;
-    height: 200px;
-    margin: -150px 0 0 -200px;
-    background: url('/static/img/football_laces_old_school.gif') no-repeat center center;
+    height: 225px;
+    transform: translate(-50%,-50%);
+    background: url('/static/img/Loader/football_laces_old_school.gif') no-repeat center center;
 }
 
 #outer {
