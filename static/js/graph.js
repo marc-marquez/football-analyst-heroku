@@ -85,6 +85,55 @@ function setTeamLogo(team){
     }
 }
 
+function setTeamURL(team){
+    var teamURL = document.getElementById("teamURL");
+    if (team){
+        teamURL.href = "http://www."+getTeamURL(team);
+    }
+    else {
+        teamURL.href = "http://www.nfl.com";
+    }
+}
+
+/*Temporary function to get team websites for 2017.  Need to import from database.*/
+function getTeamURL(team){
+    var teamURL = {
+        "ARI": "azcardinals.com",
+        "ATL": "atlantafalcons.com",
+        "BAL": "baltimoreravens.com",
+        "BUF": "buffalobills.com",
+        "CAR": "panthers.com",
+        "CHI": "chicagobears.com",
+        "CIN": "bengals.com",
+        "CLE": "clevelandbrowns.com",
+        "DAL": "www.dallascowboys.com",
+        "DEN": "denverbroncos.com",
+        "DET": "detroitlions.com",
+        "GB": "packers.com",
+        "HOU": "houstontexans.com",
+        "IND": "colts.com",
+        "JAX": "jaguars.com",
+        "KC": "chiefs.com",
+        "LA": "therams.com",
+        "LAC": "chargers.com",
+        "MIA": "miamidolphins.com",
+        "MIN": "vikings.com",
+        "NE": "patriots.com",
+        "NO": "neworleanssaints.com",
+        "NYG": "giants.com",
+        "NYJ": "newyorkjets.com",
+        "OAK": "raiders.com",
+        "PHI": "philadelphiaeagles.com",
+        "PIT": "steelers.com",
+        "SF": "49ers.com",
+        "SEA": "seahawks.com",
+        "TB": "buccaneers.com",
+        "TEN": "titansonline.com",
+        "WAS": "redskins.com"
+    };
+    return teamURL[team];
+}
+
 /*Temporary function to get bye weeks for 2017.  Need to either import from database or use groupSum
 to figure out where the bye weeks are. Hint, you need to find where run and pass plays are zero for that
 week.
@@ -236,9 +285,9 @@ function makeGraphs(error, nflData2017) {
     var downDim = ndx.dimension(function (d) {
        return d.down;
     });
-    /*var passLengthDim = ndx.dimension(function (d) {
-        return d.PassLength;
-    });*/
+    //var passLengthDim = ndx.dimension(function (d) {
+    //    return d.PassLength;
+    //});
     var offenseTeamDim = ndx.dimension(function (d) {
         return d.posteam;
     });
@@ -443,6 +492,7 @@ function makeGraphs(error, nflData2017) {
             currentTeam = offensiveTeamSelectField.filters()[0];
             yardsChart.ordinalColors(getTeamColors(currentTeam));
             setTeamLogo(currentTeam);
+            setTeamURL(currentTeam);
         })
         .on('pretransition', function(yardsChart) {
             currentTeam = offensiveTeamSelectField.filters()[0];
