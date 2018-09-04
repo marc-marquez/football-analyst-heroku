@@ -21,6 +21,12 @@ function removeNAValues(source_group) {
     }
 }
 
+function showPage(){
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("outer").style.display = "block";
+    document.getElementById("outer").style.opacity = 1;
+}
+
 function getTeamColors(team){
     //Had to replace #FFFFFF with #DCDCDC to make white visible
 
@@ -771,4 +777,5 @@ function makeGraphs(error, nflData2017) {
          });
 
     dc.renderAll();
+    showPage();
 }
