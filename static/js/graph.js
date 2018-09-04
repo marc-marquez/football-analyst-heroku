@@ -358,19 +358,19 @@ function makeGraphs(error, nflData2017) {
     //Charts
     var playsChart = dc.compositeChart("#plays-chart");
     var yardsChart = dc.lineChart("#yards-chart");
-    var passLocationChart = dc.rowChart("#pass-location-row-chart");
+    passLocationChart = dc.rowChart("#pass-location-row-chart");
     var numberPlaysND = dc.numberDisplay("#number-plays-nd");
     var totalYardsND = dc.numberDisplay("#total-yards-nd");
     var avgYardsND = dc.numberDisplay("#avg-yards-nd");
-    var passOutcomeChart = dc.pieChart("#complete-chart");
-    var passToPositionChart = dc.pieChart("#position-chart");
-    var downChart = dc.rowChart("#down-row-chart");
-    var quarterChart = dc.rowChart("#quarter-row-chart");
+    passOutcomeChart = dc.pieChart("#complete-chart");
+    passToPositionChart = dc.pieChart("#position-chart");
+    downChart = dc.rowChart("#down-row-chart");
+    quarterChart = dc.rowChart("#quarter-row-chart");
     //var passLengthChart = dc.rowChart("#passlength-row-chart");
     var playTypeChart = dc.rowChart("#playtype-row-chart");
-    var runLocationChart = dc.rowChart("#run-location-row-chart");
-    var runGapChart = dc.rowChart("#run-gap-row-chart");
-    var offensiveTeamSelectField = dc.selectMenu('#team-menu-select');
+    runLocationChart = dc.rowChart("#run-location-row-chart");
+    runGapChart = dc.rowChart("#run-gap-row-chart");
+    offensiveTeamSelectField = dc.selectMenu('#team-menu-select');
     var passOrRushSelectField = dc.selectMenu("#pass-or-rush-menu-select");
 
 

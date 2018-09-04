@@ -145,6 +145,12 @@
                             <div class="chart-wrapper" data-step="8" data-intro="The Downs chart shows you how many plays were executed during each specific down." style="font-weight: normal" data-position="bottom">
                                 <div class="chart-title">
                                     Down
+                                    <span>
+                                        <a href="javascript:downChart.filterAll();dc.redrawAll();" class="btn btn-default btn-reset" role="button">
+                                            <span class="glyphicon glyphicon-repeat my-glyphicon-flip" data-step="10" data-intro="Undoing filters: Want to undo all of the filters for a chart? Click on this button in any of the charts." style="font-weight: normal" data-position="bottom">
+                                            </span>
+                                        </a>
+                                    </span>
                                 </div>
                                 <div class="chart-stage">
                                     <div id="down-row-chart" style="width: 100%;" data-step="9" data-intro="Applying a filter: In each of the bar and pie charts, you can narrow your focus of information.<br><br>For example: Click on the 1st down bar.  This will allow you to focus on plays executed on first down. Select/Unselect as many items as you want. Watch how other charts are affected by your filters." style="font-weight: normal" data-position="bottom"></div>
@@ -158,7 +164,7 @@
                     <div id="playsAndQtrRow" class="row">
                         <!-- Weekly Plays Chart -->
                         <div class="col-md-8 col-sm-12">
-                            <div class="chart-wrapper" data-step="10" data-intro="The Weekly Plays chart breaks down how many plays were executed during each week of the season." style="font-weight: normal" data-position="bottom">
+                            <div class="chart-wrapper" data-step="11" data-intro="The Weekly Plays chart breaks down how many plays were executed during each week of the season." style="font-weight: normal" data-position="bottom">
                                 <div class="chart-title">
                                     Weekly Pass vs Run Plays
                                 </div>
@@ -170,9 +176,9 @@
                         <!-- Weekly Plays Chart -->
                         <!-- Quarter Row Chart -->
                         <div class="col-md-4 col-sm-12">
-                            <div class="chart-wrapper" data-step="11" data-intro="The Quarters chart shows you how many plays were executed during each specific quarter." style="font-weight: normal" data-position="bottom">
+                            <div class="chart-wrapper" data-step="12" data-intro="The Quarters chart shows you how many plays were executed during each specific quarter." style="font-weight: normal" data-position="bottom">
                                 <div class="chart-title">
-                                    Quarter
+                                    Quarter <a href="javascript:quarterChart.filterAll();dc.redrawAll();" class="btn btn-default btn-reset" role="button"><span class="glyphicon glyphicon-repeat my-glyphicon-flip"></span></a>
                                 </div>
                                 <div class="chart-stage">
                                     <div id="quarter-row-chart" style="width: 100%"></div>
@@ -186,9 +192,9 @@
                     <div id="passRow" class="row">
                         <!-- Complete/Incomplete Pie Chart-->
                         <div class="col-md-4 col-sm-12">
-                            <div class="chart-wrapper" data-step="12" data-intro="The Completions chart shows you what percentage of passes were completed or incomplete." style="font-weight: normal" data-position="bottom">
+                            <div class="chart-wrapper" data-step="13" data-intro="The Completions chart shows you what percentage of passes were completed or incomplete." style="font-weight: normal" data-position="bottom">
                                 <div class="chart-title">
-                                    Complete/Incomplete Pass
+                                    Complete/Incomplete Pass <a href="javascript:passOutcomeChart.filterAll();dc.redrawAll();" class="btn btn-default btn-reset" role="button"><span class="glyphicon glyphicon-repeat my-glyphicon-flip"></span></a>
                                 </div>
                                 <div class="chart-stage">
                                     <div id="complete-chart" style="width: 100%"></div>
@@ -198,9 +204,9 @@
                         <!-- Complete/Incomplete Pie Chart -->
                         <!-- Pass Location Row Chart -->
                         <div class="col-md-4 col-sm-12">
-                            <div class="chart-wrapper" data-step="13" data-intro="The Pass Location chart shows you where on the field the passes were attempted." style="font-weight: normal" data-position="bottom">
+                            <div class="chart-wrapper" data-step="14" data-intro="The Pass Location chart shows you where on the field the passes were attempted." style="font-weight: normal" data-position="bottom">
                                 <div class="chart-title">
-                                    Pass Location
+                                    Pass Location <a href="javascript:passLocationChart.filterAll();dc.redrawAll();" class="btn btn-default btn-reset" role="button"><span class="glyphicon glyphicon-repeat my-glyphicon-flip"></span></a>
                                 </div>
                                 <div class="chart-stage">
                                     <div id="pass-location-row-chart" style="width: 100%"></div>
@@ -210,9 +216,9 @@
                         <!-- Pass Location Row Chart -->
                         <!-- Pass to Position Pie Chart -->
                         <div class="col-md-4 col-sm-12">
-                            <div class="chart-wrapper" data-step="14" data-intro="The Pass to Position chart shows you the distribution of passes to the wide receiver, tight end, running back, or other positions." style="font-weight: normal" data-position="bottom">
+                            <div class="chart-wrapper" data-step="15" data-intro="The Pass to Position chart shows you the distribution of passes to the wide receiver, tight end, running back, or other positions." style="font-weight: normal" data-position="bottom">
                                 <div class="chart-title">
-                                    Pass to Position Breakdown
+                                    Pass to Position Breakdown <a href="javascript:passToPositionChart.filterAll();dc.redrawAll();" class="btn btn-default btn-reset" role="button"><span class="glyphicon glyphicon-repeat my-glyphicon-flip"></span></a>
                                 </div>
                                 <div class="chart-stage">
                                     <div id="position-chart" style="width: 100%"></div>
@@ -226,9 +232,9 @@
                     <div id="runRow" class="row">
                         <!-- Run Location Row Chart -->
                         <div class="col-md-4 col-sm-12">
-                            <div class="chart-wrapper" data-step="15" data-intro="The Run Location chart shows you which direction on the field the run was atttempted." style="font-weight: normal" data-position="bottom">
+                            <div class="chart-wrapper" data-step="16" data-intro="The Run Location chart shows you which direction on the field the run was atttempted." style="font-weight: normal" data-position="bottom">
                                 <div class="chart-title">
-                                    Run Location
+                                    Run Location <a href="javascript:runLocationChart.filterAll();dc.redrawAll();" class="btn btn-default btn-reset" role="button"><span class="glyphicon glyphicon-repeat my-glyphicon-flip"></span></a>
                                 </div>
                                 <div class="chart-stage">
                                     <div id="run-location-row-chart" style="width: 100%"></div>
@@ -238,9 +244,9 @@
                         <!-- Run Location Row Chart -->
                         <!-- Run Gap Row Chart -->
                         <div class="col-md-4 col-sm-12">
-                            <div class="chart-wrapper"  data-step="16" data-intro="The Run Gap chart shows you where on the offensive line the run was attempted.<br><br>For example: Want to see which runs went over the left guard? Click on the guard bar in this chart and the left bar in the run location chart." style="font-weight: normal" data-position="bottom">
+                            <div class="chart-wrapper"  data-step="17" data-intro="The Run Gap chart shows you where on the offensive line the run was attempted.<br><br>For example: Want to see which runs went over the left guard? Click on the guard bar in this chart and the left bar in the run location chart." style="font-weight: normal" data-position="bottom">
                                 <div class="chart-title">
-                                    Run Gap
+                                    Run Gap <a href="javascript:runGapChart.filterAll();dc.redrawAll();" class="btn btn-default btn-reset" role="button"><span class="glyphicon glyphicon-repeat my-glyphicon-flip"></span></a>
                                 </div>
                                 <div class="chart-stage">
                                     <div id="run-gap-row-chart" style="width: 100%"></div>

@@ -85,4 +85,19 @@
     color: white;
 }
 
+.btn-reset {
+    padding: 5px 10px;
+    float: right;
+    margin-top: -8px;
+    margin-right: -11px;
+    background-color: lightgrey;
+}
+
+.my-glyphicon-flip {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
 
