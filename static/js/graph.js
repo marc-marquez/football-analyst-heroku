@@ -177,6 +177,14 @@ function getTeamByeWeek(team){
 }
 
 function drawByeWeekLine (chart,bye) {
+    var chartBody = chart.select('g');
+
+    //Clear existing line
+    chartBody.selectAll("#oeLine").remove();
+
+    //Clear existing text
+    chartBody.selectAll("#oeText").remove();
+
     if(bye) {
         var x_vert = bye;
         var extra_data = [
@@ -192,13 +200,13 @@ function drawByeWeekLine (chart,bye) {
             })
             .interpolate('linear');
 
-        var chartBody = chart.select('g');
+        //var chartBody = chart.select('g');
 
         //Clear existing line
-        chartBody.selectAll("#oeLine").remove();
+        //chartBody.selectAll("#oeLine").remove();
 
         //Clear existing text
-        chartBody.selectAll("#oeText").remove();
+        //chartBody.selectAll("#oeText").remove();
 
         var path = chartBody.selectAll('path.extra').data([extra_data]);
 
