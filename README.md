@@ -4,9 +4,11 @@ The Football Analyst application provides coaches, fantasy football players, and
 
 ## Design Choices
 
+* I decided to enable "useViewBoxReszing" for each of the dc.js charts. Responsiveness of charts when transitioning to resolutions less than 992px were less than ideal. Using the viewbox resizing parameter allowed for a better UI experience.
+
 ## Running the tests
 
-Product testing was run manually and can be found [here](need link) 
+Product testing was run manually and can be found [here](https://docs.google.com/spreadsheets/d/1JuIEZ_lForOe0CpePoWHY-vdiUOLn1gA_eFDugBtlLE/edit?usp=sharing) 
 
 ### Test Descriptions
 
@@ -26,7 +28,7 @@ Each of these pages were tested for:
 
 ## Built With
 
-* [Flask 0.12.2](http://flask.pocoo.org/)
+* [Flask 0.12.3](http://flask.pocoo.org/)
 * [Pymongo 3.6.1](https://api.mongodb.com/python/current/)
 * [Gunicorn 19.9.0](http://gunicorn.org/)
 * [DC.js 2.1.0](https://dc-js.github.io/dc.js/) - Dimensional Charting
@@ -34,10 +36,8 @@ Each of these pages were tested for:
 * [Crossfilter.js 1.3.5](http://square.github.io/crossfilter/) - Multidimensional Filtering and Charting
 * [Intro.js 2.9.3](https://introjs.com/) - Tutorial Overlay
 * [jQuery 3.2.1](http://code.jquery.com/) - Prerequisite for Bootstrap (CDN)
-* [PopperJS 1.12.9](https://popper.js.org/) - Prerequisite for Bootstrap (CDN)
 * [Bootstrap 3.3.7](https://getbootstrap.com/) - Grid system and layout
-* [FontAwesome 5.0.7](https://fontawesome.com/) - Brand icons and chevron buttons (CSS)
-* [Google Fonts](fonts.google.com) - Homemade Apple, Raleway, and Special Elite Fonts (CSS)
+* [Google Fonts](fonts.google.com) - Carrois Gothic SC (CSS)
 
 ## Authors
 
@@ -46,5 +46,3 @@ Each of these pages were tested for:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
