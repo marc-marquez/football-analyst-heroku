@@ -39,9 +39,6 @@ Each of these pages were tested for:
 * [FontAwesome 5.0.7](https://fontawesome.com/) - Brand icons and chevron buttons (CSS)
 * [Google Fonts](fonts.google.com) - Homemade Apple, Raleway, and Special Elite Fonts (CSS)
 
-## Versioning
-Current version - v105
-
 ## Authors
 
 * **Marc Marquez** - [Github Page](https://github.com/marc-marquez/)
