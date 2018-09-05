@@ -13,65 +13,71 @@ function removeNAValues(source_group) {
     }
 }
 
+//Function to hide loader when page is done loading
 function showPage(){
     document.getElementById("loader").style.display = "none";
     document.getElementById("outer").style.display = "block";
     document.getElementById("outer").style.opacity = 1;
 }
 
+//Function to return team colors as an array of hex values
 function getTeamColors(team){
+    //Set default color palette
+    var returnColors = ["#013369","#D50A0A","#008000","#FFA500","#FFFF00"];
+    var teamColors,nflColors;
+
     //Had to replace #FFFFFF with #DCDCDC to make white visible
+    if(team) {
+        teamColors = {
+            "ARI": ["#97233F", "#FFB612", "#000000"],
+            "ATL": ["#A71930", "#A5ACAF", "#000000"],
+            "BAL": ["#241773", "#9E7C0C", "#000000"],
+            "BUF": ["#00338D", "#C60C30"],
+            "CAR": ["#0085CA", "#BFC0BF", "#000000"],
+            "CHI": ["#F26522", "#00143F"],
+            "CIN": ["#FB4F14", "#000000"],
+            "CLE": ["#22150C", "#FB4F14"],
+            "DAL": ["#0C264C", "#B0B7BC"],
+            "DEN": ["#002244", "#FB4F14"],
+            "DET": ["#046EB4", "#B0B7BC", "#000000"],
+            "GB": ["#24423C", "#FCBE14"],
+            "HOU": ["#00143F", "#C9243F"],
+            "IND": ["#003D79", "#DCDCDC"],
+            "JAX": ["#D8A328", "#136677", "#000000", "#9E7A2C"],
+            "KC": ["#CA2430", "#FFB612", "#000000"],
+            "LA": ["#95774C", "#002147"],
+            "LAC": ["#0A2342", "#2072BA", "#FDB515"],
+            "MIA": ["#0091A0", "#FF8500", "#002760"],
+            "MIN": ["#4F2E84", "#FEC62F", "#000000"],
+            "NE": ["#0A2342", "#C81F32", "#B0B7BD"],
+            "NO": ["#A08A58", "#000000"],
+            "NYG": ["#192E6C", "#B20032"],
+            "NYJ": ["#203731", "#DCDCDC"],
+            "OAK": ["#C4C9CC", "#000000"],
+            "PHI": ["#014A53", "#BBC4C9", "#000000"],
+            "PIT": ["#FFC20E", "#DA2128", "#000000", "#00529B", "#B2BABF"],
+            "SF": ["#C9243F", "#C8AA76", "#000000"],
+            "SEA": ["#002A5C", "#7AC142", "#B2B7BB", "#2D5980"],
+            "TB": ["#D40909", "#B0B9BF", "#000000", "#FF7900"],
+            "TEN": ["#4095D1", "#00295B", "#DA2128", "#BCC4C9"],
+            "WAS": ["#FFC20F", "#7C1415", "#000000", "#693213"]
+        };
 
-    var teamColors = {
-        "ARI": ["#97233F", "#FFB612", "#000000"],
-        "ATL": ["#A71930", "#A5ACAF", "#000000"],
-        "BAL": ["#241773", "#9E7C0C", "#000000"],
-        "BUF": ["#00338D", "#C60C30"],
-        "CAR": ["#0085CA", "#BFC0BF", "#000000"],
-        "CHI": ["#F26522", "#00143F"],
-        "CIN": ["#FB4F14", "#000000"],
-        "CLE": ["#22150C", "#FB4F14"],
-        "DAL": ["#0C264C", "#B0B7BC"],
-        "DEN": ["#002244", "#FB4F14"],
-        "DET": ["#046EB4", "#B0B7BC", "#000000"],
-        "GB": ["#24423C", "#FCBE14"],
-        "HOU": ["#00143F", "#C9243F"],
-        "IND": ["#003D79", "#DCDCDC"],
-        "JAX": ["#D8A328", "#136677", "#000000", "#9E7A2C"],
-        "KC": ["#CA2430", "#FFB612", "#000000"],
-        "LA": ["#95774C", "#002147"],
-        "LAC": ["#0A2342", "#2072BA", "#FDB515"],
-        "MIA": ["#0091A0", "#FF8500", "#002760"],
-        "MIN": ["#4F2E84", "#FEC62F", "#000000"],
-        "NE": ["#0A2342", "#C81F32", "#B0B7BD"],
-        "NO": ["#A08A58", "#000000"],
-        "NYG": ["#192E6C", "#B20032"],
-        "NYJ": ["#203731", "#DCDCDC"],
-        "OAK": ["#C4C9CC", "#000000"],
-        "PHI": ["#014A53", "#BBC4C9", "#000000"],
-        "PIT": ["#FFC20E", "#DA2128", "#000000", "#00529B", "#B2BABF"],
-        "SF": ["#C9243F", "#C8AA76", "#000000"],
-        "SEA": ["#002A5C", "#7AC142", "#B2B7BB", "#2D5980"],
-        "TB": ["#D40909", "#B0B9BF", "#000000", "#FF7900"],
-        "TEN": ["#4095D1", "#00295B", "#DA2128", "#BCC4C9"],
-        "WAS": ["#FFC20F", "#7C1415", "#000000", "#693213"]
-    };
+        nflColors = ["#013369", "#D50A0A"];
 
-    var returnColors = ["#013369","#D50A0A","#008000","#FFA500","#FFFF00"]
-    var nflColors = ["#013369","#D50A0A"];
-
-    if(team){
         returnColors = teamColors[team];
+
+        //Fill out rest of palette if less than 5 colors
         if (returnColors.length < 5) {
-               returnColors.push(nflColors[0]);
-               returnColors.push(nflColors[1]);
-           }
+            returnColors.push(nflColors[0]);
+            returnColors.push(nflColors[1]);
+        }
 
     }
-
     return returnColors;
 }
 
+//Sets the team logo source in html
 function setTeamLogo(team){
     var logo = document.getElementById("logo");
 
@@ -83,6 +89,7 @@ function setTeamLogo(team){
     }
 }
 
+//Sets the team website url in html
 function setTeamURL(team){
     var teamURL = document.getElementById("teamURL");
     if (team){
@@ -174,6 +181,7 @@ function getTeamByeWeek(team){
     return teamByeWeek[team];
 }
 
+//Draws the bye week dashed line as an svg line
 function drawByeWeekLine (chart,bye) {
     var chartBody = chart.select('g');
 
@@ -226,6 +234,7 @@ function drawByeWeekLine (chart,bye) {
     }
 }
 
+//Creates all graphs and charts
 function makeGraphs(error, nflData2017) {
     if (error) {
         console.error("makeGraphs error on receiving dataset:", error.statusText);
@@ -268,7 +277,6 @@ function makeGraphs(error, nflData2017) {
     });
 
     //Calculate metrics
-    //var numPlaysByDateGroup = weekDim.group();
     var totalYardsByWeekGroupSum = weekDim.group().reduceSum(function(d) { return d.YardsGained });
     var numRunPlaysByWeekGroupSum = weekDim.group().reduceSum(function(d) {return d.PlayType=="Run"});
     var numPassPlaysByWeekGroupSum = weekDim.group().reduceSum(function(d) {return d.PlayType=="Pass"});
@@ -317,7 +325,7 @@ function makeGraphs(error, nflData2017) {
     var maxWeek = weekDim.top(1)[0]["Week"];
 
     //Default colors
-    var colorScheme = ["#C96A23", "#66AFB2", "#D3D1C5", "#F5821F","#79CED7"];
+    var colorScheme = ["#013369","#D50A0A","#008000","#FFA500","#FFFF00"];
     var currentTeam = null;
 
     //Charts
@@ -336,8 +344,6 @@ function makeGraphs(error, nflData2017) {
     runGapChart = dc.rowChart("#run-gap-row-chart");
     offensiveTeamSelectField = dc.selectMenu('#team-menu-select');
     passOrRushSelectField = dc.selectMenu("#pass-or-rush-menu-select");
-
-
 
     offensiveTeamSelectField
         .height(100)
@@ -436,6 +442,7 @@ function makeGraphs(error, nflData2017) {
         })
         .on('pretransition', function(playsChart){
             currentTeam = offensiveTeamSelectField.filters()[0];
+            //Important: Drawing the bye week only works in the pretransition in this case.
             drawByeWeekLine(playsChart,getTeamByeWeek(currentTeam));
         })
         .yAxis().ticks(5);
