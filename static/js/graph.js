@@ -322,23 +322,21 @@ function makeGraphs(error, nflData2017) {
     var maxWeek = weekDim.top(1)[0]["Week"];
 
     //Charts
-    var playsChart = dc.compositeChart("#plays-chart");
-    var yardsChart = dc.lineChart("#yards-chart");
+    playsChart = dc.compositeChart("#plays-chart");
+    yardsChart = dc.lineChart("#yards-chart");
     passLocationChart = dc.rowChart("#pass-location-row-chart");
-    var numberPlaysND = dc.numberDisplay("#number-plays-nd");
-    var totalYardsND = dc.numberDisplay("#total-yards-nd");
-    var avgYardsND = dc.numberDisplay("#avg-yards-nd");
+    numberPlaysND = dc.numberDisplay("#number-plays-nd");
+    totalYardsND = dc.numberDisplay("#total-yards-nd");
+    avgYardsND = dc.numberDisplay("#avg-yards-nd");
     passOutcomeChart = dc.pieChart("#complete-chart");
     passToPositionChart = dc.pieChart("#position-chart");
     downChart = dc.rowChart("#down-row-chart");
     quarterChart = dc.rowChart("#quarter-row-chart");
-    //var passLengthChart = dc.rowChart("#passlength-row-chart");
-    var playTypeChart = dc.rowChart("#playtype-row-chart");
+    playTypeChart = dc.rowChart("#playtype-row-chart");
     runLocationChart = dc.rowChart("#run-location-row-chart");
     runGapChart = dc.rowChart("#run-gap-row-chart");
     offensiveTeamSelectField = dc.selectMenu('#team-menu-select');
-    var passOrRushSelectField = dc.selectMenu("#pass-or-rush-menu-select");
-
+    passOrRushSelectField = dc.selectMenu("#pass-or-rush-menu-select");
 
     var colorScheme = ["#C96A23", "#66AFB2", "#D3D1C5", "#F5821F","#79CED7"];
     var currentTeam = null;
@@ -569,34 +567,6 @@ function makeGraphs(error, nflData2017) {
             quarterChart.ordinalColors(getTeamColors(currentTeam));
         })
         .xAxis().ticks(4);
-
-    /*passLengthChart
-        .ordinalColors(colorScheme)
-        .width(300)
-        .height(300)
-        .dimension(passLengthDim)
-        .group(passLengthGroup)
-        //.labelOffsetX(-20)
-        //.ordering(function(d){
-        //    if(d.key == "1") return 0;
-        //    else if (d.key == "2") return 1;
-        //    else if (d.key == "3") return 2;
-        //    else return 4;
-        //})
-        .elasticX(true)
-        .on('pretransition', function(passLengthChart) {
-            currentTeam = offensiveTeamSelectField.filters()[0];
-            passLengthChart.ordinalColors(getTeamColors(currentTeam));
-        })
-        .on('preRedraw', function(passLengthChart) {
-            currentTeam = offensiveTeamSelectField.filters()[0];
-            passLengthChart.ordinalColors(getTeamColors(currentTeam));
-        })
-        .on('preRender', function(passLengthChart) {
-            currentTeam = offensiveTeamSelectField.filters()[0];
-            passLengthChart.ordinalColors(getTeamColors(currentTeam));
-        })
-        .xAxis().ticks(4);*/
 
     playTypeChart
         .ordinalColors(colorScheme)
