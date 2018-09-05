@@ -250,7 +250,6 @@ function makeGraphs(error, nflData2017) {
     });
     var runGapDim = ndx.dimension(function (d) {
         return d.RunGap;
-
     });
     var passOutcomeDim = ndx.dimension(function (d) {
         return d.PassOutcome;
