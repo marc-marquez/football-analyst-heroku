@@ -249,11 +249,7 @@ function makeGraphs(error, nflData2017) {
         return d.RunLocation;
     });
     var runGapDim = ndx.dimension(function (d) {
-        if (d.RunGap == 'NA') {
-            return "center";
-        } else {
-            return d.RunGap;
-        }
+        return d.RunGap;
 
     });
     var passOutcomeDim = ndx.dimension(function (d) {
@@ -321,6 +317,10 @@ function makeGraphs(error, nflData2017) {
     var minWeek = weekDim.bottom(1)[0]["Week"];
     var maxWeek = weekDim.top(1)[0]["Week"];
 
+    //Default colors
+    var colorScheme = ["#C96A23", "#66AFB2", "#D3D1C5", "#F5821F","#79CED7"];
+    var currentTeam = null;
+
     //Charts
     playsChart = dc.compositeChart("#plays-chart");
     yardsChart = dc.lineChart("#yards-chart");
@@ -338,8 +338,7 @@ function makeGraphs(error, nflData2017) {
     offensiveTeamSelectField = dc.selectMenu('#team-menu-select');
     passOrRushSelectField = dc.selectMenu("#pass-or-rush-menu-select");
 
-    var colorScheme = ["#C96A23", "#66AFB2", "#D3D1C5", "#F5821F","#79CED7"];
-    var currentTeam = null;
+
 
     offensiveTeamSelectField
         .height(100)
