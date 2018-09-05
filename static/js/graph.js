@@ -2,14 +2,6 @@ queue()
     .defer(d3.json, "/pbp_2017")
     .await(makeGraphs);
 
-function print_filter(filter){
-	var f=eval(filter);
-	if (typeof(f.length) != "undefined") {}else{}
-	if (typeof(f.top) != "undefined") {f=f.top(Infinity);}else{}
-	if (typeof(f.dimension) != "undefined") {f=f.dimension(function(d) { return "";}).top(Infinity);}else{}
-	console.log(filter+"("+f.length+") = "+JSON.stringify(f).replace("[","[\n\t").replace(/}\,/g,"},\n\t").replace("]","\n]"));
-}
-
 //Function to create a fake group that removes NA values from the original group
 function removeNAValues(source_group) {
     return {
@@ -206,14 +198,6 @@ function drawByeWeekLine (chart,bye) {
             })
             .interpolate('linear');
 
-        //var chartBody = chart.select('g');
-
-        //Clear existing line
-        //chartBody.selectAll("#oeLine").remove();
-
-        //Clear existing text
-        //chartBody.selectAll("#oeText").remove();
-
         var path = chartBody.selectAll('path.extra').data([extra_data]);
 
         path = path.enter()
@@ -223,6 +207,7 @@ function drawByeWeekLine (chart,bye) {
             .attr('id', 'oeLine')
             .attr("stroke-width", 1.5)
             .style("stroke-dasharray", ("10,4"));
+
         path.attr('d', line);
 
         var text = chartBody.selectAll('#oeLine')
@@ -247,32 +232,16 @@ function makeGraphs(error, nflData2017) {
         throw error;
     }
 
-    //Convert each date string to datetime format
-    /*var dateFormat = d3.time.format("%m/%d/%y");
-    nflData2017.forEach(function (d) {
-        d.Date = dateFormat.parse(d.Date);
-    });*/
-
-
     //Create a Crossfilter instance
     var ndx = crossfilter(nflData2017);
 
     //Define Dimensions
-    /*var dateDim = ndx.dimension(function (d) {
-        return d.Date;
-    });*/
     var weekDim = ndx.dimension(function (d) {
         return d.Week;
     });
-    /*var timeUnderDim = ndx.dimension(function (d) {
-           return d.TimeUnder;
-    });*/
     var quarterDim = ndx.dimension(function (d) {
            return d.qtr;
     });
-    /*var playAttemptedDim = ndx.dimension(function (d) {
-        return d.PlayAttempted;
-    });*/
     var passLocationDim = ndx.dimension(function (d) {
         return d.PassLocation;
     });
@@ -287,9 +256,6 @@ function makeGraphs(error, nflData2017) {
         }
 
     });
-    /*var rushAttemptDim = ndx.dimension(function (d) {
-        return d.RushAttempt;
-    });*/
     var passOutcomeDim = ndx.dimension(function (d) {
         return d.PassOutcome;
     });
@@ -299,9 +265,6 @@ function makeGraphs(error, nflData2017) {
     var downDim = ndx.dimension(function (d) {
        return d.down;
     });
-    //var passLengthDim = ndx.dimension(function (d) {
-    //    return d.PassLength;
-    //});
     var offenseTeamDim = ndx.dimension(function (d) {
         return d.posteam;
     });
@@ -326,9 +289,6 @@ function makeGraphs(error, nflData2017) {
     var positionGroupSum = positionDim.group().reduceSum(function(d) {return d.PlayType=="Pass"});
     var downGroup = downDim.group();
     var playTypeGroup = playTypeDim.group();
-    //var passLengthGroup = passLengthDim.group();
-
-
 
     var all = ndx.groupAll();
     var totalYards = ndx.groupAll().reduceSum(function (d) {

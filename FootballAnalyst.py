@@ -4,15 +4,21 @@ from pymongo import MongoClient
 from pprint import pprint
 import json
 import os
+from os.path import join, dirname
+from dotenv import load_dotenv
 
 app = Flask(__name__)
+
+dotenv_path = join(dirname(__file__),'.env')
+load_dotenv(dotenv_path)
 
 #MONGODB_HOST = 'localhost'
 #MONGODB_PORT = 27017
 #DBS_NAME = 'NFLScrapR'
 
-MONGO_URI = os.getenv('MONGODB_URI','mongodb://ds129010.mlab.com:29010')
-DBS_NAME = os.getenv('MONGO_DB_NAME','heroku_51gxnjkc')
+MONGO_URI = os.environ.get('MONGODB_URI')
+DBS_NAME = os.environ.get('MONGO_DB_NAME')
+
 #PBP_2017_COLLECTION_NAME = 'pbp_2017'
 #PBP_2017_COLLECTION_NAME = 'pbp_2017_pass_run_only'
 PBP_2017_COLLECTION_NAME = 'pbp_2017_bare_min_merged'

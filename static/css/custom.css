@@ -47,16 +47,6 @@
    }
 }
 
-/*@media (max-width: 500px){
-    .introjs-helperNumberLayer {
-        left: 0px !important;
-        top: -10px !important;
-    }
-    .introjs-tooltip {
-        margin-top: 40px !important;
-    }
-}*/
-
 #fullBody {
     background-color: #141C29;
     font-family: 'Carrois Gothic SC', sans-serif;
