@@ -31,8 +31,6 @@ I designed the Football Analyst application with a minamalist approach to appeal
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
- 
 ### Existing Features
 - Start Tour Button: allows user to take a visual tour of all the features offered in the app.
 - Reset Button: allows users to reset all filters on all charts by clicking the button.
@@ -53,8 +51,6 @@ In this section, you should go over the different parts of your project, and des
 - Run Gap Row Chart: allows users to filter all chart results on run plays executed on the offensive line (e.g. End, Tackle, Guard, N/A) by selecting a bar in the row chart.
 
 ## Technologies Used
-
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
 - [Flask](http://flask.pocoo.org/)
 	- The project uses **Flask** to run Python as an application.
