@@ -94,7 +94,7 @@ Each of these pages were tested for:
 |                                 | Development          | Production |
 | ------------                    | -----------          | ---------- |
 | Debug Mode                      | True                 | False      |
-| Database                        | MongdoDB             | MongoDB    |
+| Database                        | MongoDB              | MongoDB    |
 | Database Version                | 3.6.3                | 3.6.6      |
 | Database Host                   | Local                | mLab       |
 | Web Host                        | Local                | Heroku     |
