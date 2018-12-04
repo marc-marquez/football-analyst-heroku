@@ -1,5 +1,5 @@
 queue()
-    .defer(d3.json, "/pbp_2017")
+    .defer(d3.json, '/pbp_2017')
     .await(makeGraphs);
 
 //Function to create a fake group that removes NA values from the original group
@@ -15,55 +15,55 @@ function removeNAValues(source_group) {
 
 //Function to hide loader when page is done loading
 function showPage(){
-    document.getElementById("loader").style.display = "none";
-    document.getElementById("outer").style.display = "block";
-    document.getElementById("outer").style.opacity = 1;
+    document.getElementById('loader').style.display = 'none';
+    document.getElementById('outer').style.display = 'block';
+    document.getElementById('outer').style.opacity = 1;
 }
 
 //Function to return team colors as an array of hex values
 function getTeamColors(team){
     //Set default color palette
-    var returnColors = ["#013369","#D50A0A","#008000","#FFA500","#FFFF00"];
+    var returnColors = ['#013369','#D50A0A','#008000','#FFA500','#FFFF00'];
     var teamColors,nflColors;
 
     //Had to replace #FFFFFF with #DCDCDC to make white visible
     if(team) {
         teamColors = {
-            "ARI": ["#97233F", "#FFB612", "#000000"],
-            "ATL": ["#A71930", "#A5ACAF", "#000000"],
-            "BAL": ["#241773", "#9E7C0C", "#000000"],
-            "BUF": ["#00338D", "#C60C30"],
-            "CAR": ["#0085CA", "#BFC0BF", "#000000"],
-            "CHI": ["#F26522", "#00143F"],
-            "CIN": ["#FB4F14", "#000000"],
-            "CLE": ["#22150C", "#FB4F14"],
-            "DAL": ["#0C264C", "#B0B7BC"],
-            "DEN": ["#002244", "#FB4F14"],
-            "DET": ["#046EB4", "#B0B7BC", "#000000"],
-            "GB": ["#24423C", "#FCBE14"],
-            "HOU": ["#00143F", "#C9243F"],
-            "IND": ["#003D79", "#DCDCDC"],
-            "JAX": ["#D8A328", "#136677", "#000000", "#9E7A2C"],
-            "KC": ["#CA2430", "#FFB612", "#000000"],
-            "LA": ["#95774C", "#002147"],
-            "LAC": ["#0A2342", "#2072BA", "#FDB515"],
-            "MIA": ["#0091A0", "#FF8500", "#002760"],
-            "MIN": ["#4F2E84", "#FEC62F", "#000000"],
-            "NE": ["#0A2342", "#C81F32", "#B0B7BD"],
-            "NO": ["#A08A58", "#000000"],
-            "NYG": ["#192E6C", "#B20032"],
-            "NYJ": ["#203731", "#DCDCDC"],
-            "OAK": ["#C4C9CC", "#000000"],
-            "PHI": ["#014A53", "#BBC4C9", "#000000"],
-            "PIT": ["#FFC20E", "#DA2128", "#000000", "#00529B", "#B2BABF"],
-            "SF": ["#C9243F", "#C8AA76", "#000000"],
-            "SEA": ["#002A5C", "#7AC142", "#B2B7BB", "#2D5980"],
-            "TB": ["#D40909", "#B0B9BF", "#000000", "#FF7900"],
-            "TEN": ["#4095D1", "#00295B", "#DA2128", "#BCC4C9"],
-            "WAS": ["#FFC20F", "#7C1415", "#000000", "#693213"]
+            'ARI': ['#97233F', '#FFB612', '#000000'],
+            'ATL': ['#A71930', '#A5ACAF', '#000000'],
+            'BAL': ['#241773', '#9E7C0C', '#000000'],
+            'BUF': ['#00338D', '#C60C30'],
+            'CAR': ['#0085CA', '#BFC0BF', '#000000'],
+            'CHI': ['#F26522', '#00143F'],
+            'CIN': ['#FB4F14', '#000000'],
+            'CLE': ['#22150C', '#FB4F14'],
+            'DAL': ['#0C264C', '#B0B7BC'],
+            'DEN': ['#002244', '#FB4F14'],
+            'DET': ['#046EB4', '#B0B7BC', '#000000'],
+            'GB': ['#24423C', '#FCBE14'],
+            'HOU': ['#00143F', '#C9243F'],
+            'IND': ['#003D79', '#DCDCDC'],
+            'JAX': ['#D8A328', '#136677', '#000000', '#9E7A2C'],
+            'KC': ['#CA2430', '#FFB612', '#000000'],
+            'LA': ['#95774C', '#002147'],
+            'LAC': ['#0A2342', '#2072BA', '#FDB515'],
+            'MIA': ['#0091A0', '#FF8500', '#002760'],
+            'MIN': ['#4F2E84', '#FEC62F', '#000000'],
+            'NE': ['#0A2342', '#C81F32', '#B0B7BD'],
+            'NO': ['#A08A58', '#000000'],
+            'NYG': ['#192E6C', '#B20032'],
+            'NYJ': ['#203731', '#DCDCDC'],
+            'OAK': ['#C4C9CC', '#000000'],
+            'PHI': ['#014A53', '#BBC4C9', '#000000'],
+            'PIT': ['#FFC20E', '#DA2128', '#000000', '#00529B', '#B2BABF'],
+            'SF': ['#C9243F', '#C8AA76', '#000000'],
+            'SEA': ['#002A5C', '#7AC142', '#B2B7BB', '#2D5980'],
+            'TB': ['#D40909', '#B0B9BF', '#000000', '#FF7900'],
+            'TEN': ['#4095D1', '#00295B', '#DA2128', '#BCC4C9'],
+            'WAS': ['#FFC20F', '#7C1415', '#000000', '#693213']
         };
 
-        nflColors = ["#013369", "#D50A0A"];
+        nflColors = ['#013369', '#D50A0A'];
 
         returnColors = teamColors[team];
 
@@ -79,62 +79,62 @@ function getTeamColors(team){
 
 //Sets the team logo source in html
 function setTeamLogo(team){
-    var logo = document.getElementById("logo");
+    var logo = document.getElementById('logo');
 
     if (team){
-        logo.src = "/static/img/"+team+".svg";
+        logo.src = '/static/img/'+team+'.svg';
     }
     else {
-        logo.src = "/static/img/NFL.svg";
+        logo.src = '/static/img/NFL.svg';
     }
 }
 
 //Sets the team website url in html
 function setTeamURL(team){
-    var teamURL = document.getElementById("teamURL");
+    var teamURL = document.getElementById('teamURL');
     if (team){
-        teamURL.href = "http://www."+getTeamURL(team);
+        teamURL.href = 'http://www.'+getTeamURL(team);
     }
     else {
-        teamURL.href = "http://www.nfl.com";
+        teamURL.href = 'http://www.nfl.com';
     }
 }
 
 /*Temporary function to get team websites for 2017.  Need to import from database.*/
 function getTeamURL(team){
     var teamURL = {
-        "ARI": "azcardinals.com",
-        "ATL": "atlantafalcons.com",
-        "BAL": "baltimoreravens.com",
-        "BUF": "buffalobills.com",
-        "CAR": "panthers.com",
-        "CHI": "chicagobears.com",
-        "CIN": "bengals.com",
-        "CLE": "clevelandbrowns.com",
-        "DAL": "www.dallascowboys.com",
-        "DEN": "denverbroncos.com",
-        "DET": "detroitlions.com",
-        "GB": "packers.com",
-        "HOU": "houstontexans.com",
-        "IND": "colts.com",
-        "JAX": "jaguars.com",
-        "KC": "chiefs.com",
-        "LA": "therams.com",
-        "LAC": "chargers.com",
-        "MIA": "miamidolphins.com",
-        "MIN": "vikings.com",
-        "NE": "patriots.com",
-        "NO": "neworleanssaints.com",
-        "NYG": "giants.com",
-        "NYJ": "newyorkjets.com",
-        "OAK": "raiders.com",
-        "PHI": "philadelphiaeagles.com",
-        "PIT": "steelers.com",
-        "SF": "49ers.com",
-        "SEA": "seahawks.com",
-        "TB": "buccaneers.com",
-        "TEN": "titansonline.com",
-        "WAS": "redskins.com"
+        'ARI': 'azcardinals.com',
+        'ATL': 'atlantafalcons.com',
+        'BAL': 'baltimoreravens.com',
+        'BUF': 'buffalobills.com',
+        'CAR': 'panthers.com',
+        'CHI': 'chicagobears.com',
+        'CIN': 'bengals.com',
+        'CLE': 'clevelandbrowns.com',
+        'DAL': 'dallascowboys.com',
+        'DEN': 'denverbroncos.com',
+        'DET': 'detroitlions.com',
+        'GB': 'packers.com',
+        'HOU': 'houstontexans.com',
+        'IND': 'colts.com',
+        'JAX': 'jaguars.com',
+        'KC': 'chiefs.com',
+        'LA': 'therams.com',
+        'LAC': 'chargers.com',
+        'MIA': 'miamidolphins.com',
+        'MIN': 'vikings.com',
+        'NE': 'patriots.com',
+        'NO': 'neworleanssaints.com',
+        'NYG': 'giants.com',
+        'NYJ': 'newyorkjets.com',
+        'OAK': 'raiders.com',
+        'PHI': 'philadelphiaeagles.com',
+        'PIT': 'steelers.com',
+        'SF': '49ers.com',
+        'SEA': 'seahawks.com',
+        'TB': 'buccaneers.com',
+        'TEN': 'titansonline.com',
+        'WAS': 'redskins.com'
     };
     return teamURL[team];
 }
@@ -145,38 +145,38 @@ week.
  */
 function getTeamByeWeek(team){
     var teamByeWeek = {
-        "ARI": 8,
-        "ATL": 5,
-        "BAL": 10,
-        "BUF": 6,
-        "CAR": 11,
-        "CHI": 9,
-        "CIN": 6,
-        "CLE": 9,
-        "DAL": 6,
-        "DEN": 5,
-        "DET": 7,
-        "GB": 8,
-        "HOU": 7,
-        "IND": 11,
-        "JAX": 8,
-        "KC": 10,
-        "LA": 8,
-        "LAC": 9,
-        "MIA": 1,
-        "MIN": 9,
-        "NE": 9,
-        "NO": 5,
-        "NYG": 8,
-        "NYJ": 11,
-        "OAK": 10,
-        "PHI": 10,
-        "PIT": 9,
-        "SF": 11,
-        "SEA": 6,
-        "TB": 1,
-        "TEN": 8,
-        "WAS": 5
+        'ARI': 8,
+        'ATL': 5,
+        'BAL': 10,
+        'BUF': 6,
+        'CAR': 11,
+        'CHI': 9,
+        'CIN': 6,
+        'CLE': 9,
+        'DAL': 6,
+        'DEN': 5,
+        'DET': 7,
+        'GB': 8,
+        'HOU': 7,
+        'IND': 11,
+        'JAX': 8,
+        'KC': 10,
+        'LA': 8,
+        'LAC': 9,
+        'MIA': 1,
+        'MIN': 9,
+        'NE': 9,
+        'NO': 5,
+        'NYG': 8,
+        'NYJ': 11,
+        'OAK': 10,
+        'PHI': 10,
+        'PIT': 9,
+        'SF': 11,
+        'SEA': 6,
+        'TB': 1,
+        'TEN': 8,
+        'WAS': 5
     };
     return teamByeWeek[team];
 }
@@ -186,10 +186,10 @@ function drawByeWeekLine (chart,bye) {
     var chartBody = chart.select('g');
 
     //Clear existing line
-    chartBody.selectAll("#oeLine").remove();
+    chartBody.selectAll('#oeLine').remove();
 
     //Clear existing text
-    chartBody.selectAll("#oeText").remove();
+    chartBody.selectAll('#oeText').remove();
 
     if(bye) {
         var x_vert = bye;
@@ -213,8 +213,8 @@ function drawByeWeekLine (chart,bye) {
             .attr('class', 'oeExtra')
             .attr('stroke', 'red')
             .attr('id', 'oeLine')
-            .attr("stroke-width", 1.5)
-            .style("stroke-dasharray", ("10,4"));
+            .attr('stroke-width', 1.5)
+            .style('stroke-dasharray', ('10,4'));
 
         path.attr('d', line);
 
@@ -224,20 +224,20 @@ function drawByeWeekLine (chart,bye) {
             .append('text');
 
         var textLabel = text
-            .attr("x",function(d){return d.x+7})
-            .attr("y",function(d){return d.y-chart.effectiveHeight()-10})
-            .attr("id","oeText")
-            .text(function(d){return "Bye Week";})
-            .attr("font-family","Carrois Gothic SC")
-            .attr("font-size","11px")
-            .attr("fill","red");
+            .attr('x',function(d){return d.x+7})
+            .attr('y',function(d){return d.y-chart.effectiveHeight()-10})
+            .attr('id','oeText')
+            .text(function(d){return 'Bye Week';})
+            .attr('font-family','Carrois Gothic SC')
+            .attr('font-size','11px')
+            .attr('fill','red');
     }
 }
 
 //Creates all graphs and charts
 function makeGraphs(error, nflData2017) {
     if (error) {
-        console.error("makeGraphs error on receiving dataset:", error.statusText);
+        console.error('makeGraphs error on receiving dataset:', error.statusText);
         throw error;
     }
 
@@ -278,18 +278,18 @@ function makeGraphs(error, nflData2017) {
 
     //Calculate metrics
     var totalYardsByWeekGroupSum = weekDim.group().reduceSum(function(d) { return d.YardsGained });
-    var numRunPlaysByWeekGroupSum = weekDim.group().reduceSum(function(d) {return d.PlayType=="Run"});
-    var numPassPlaysByWeekGroupSum = weekDim.group().reduceSum(function(d) {return d.PlayType=="Pass"});
+    var numRunPlaysByWeekGroupSum = weekDim.group().reduceSum(function(d) {return d.PlayType=='Run'});
+    var numPassPlaysByWeekGroupSum = weekDim.group().reduceSum(function(d) {return d.PlayType=='Pass'});
     var quarterGroup = quarterDim.group();
-    var passLocationGroupSum = passLocationDim.group().reduceSum(function(d) {return d.PlayType=="Pass"});
+    var passLocationGroupSum = passLocationDim.group().reduceSum(function(d) {return d.PlayType=='Pass'});
     var filteredPassLocationGroup = removeNAValues(passLocationGroupSum);
-    var runLocationGroupSum = runLocationDim.group().reduceSum(function(d) {return d.PlayType=="Run"});
+    var runLocationGroupSum = runLocationDim.group().reduceSum(function(d) {return d.PlayType=='Run'});
     var filteredRunLocationGroup = removeNAValues(runLocationGroupSum);
-    var runGapGroupGroupSum = runGapDim.group().reduceSum(function(d) {return d.PlayType=="Run"});
-    var passOutcomeGroupSum = passOutcomeDim.group().reduceSum(function(d) {return d.PlayType=="Pass"});
+    var runGapGroupGroupSum = runGapDim.group().reduceSum(function(d) {return d.PlayType=='Run'});
+    var passOutcomeGroupSum = passOutcomeDim.group().reduceSum(function(d) {return d.PlayType=='Pass'});
     var filteredPassOutcomeGroup = removeNAValues(passOutcomeGroupSum);
     var offenseTeamGroup = offenseTeamDim.group();
-    var positionGroupSum = positionDim.group().reduceSum(function(d) {return d.PlayType=="Pass"});
+    var positionGroupSum = positionDim.group().reduceSum(function(d) {return d.PlayType=='Pass'});
     var downGroup = downDim.group();
     var playTypeGroup = playTypeDim.group();
 
@@ -321,29 +321,29 @@ function makeGraphs(error, nflData2017) {
     };
 
     //Define first week and last week to be used in line charts
-    var minWeek = weekDim.bottom(1)[0]["Week"];
-    var maxWeek = weekDim.top(1)[0]["Week"];
+    var minWeek = weekDim.bottom(1)[0]['Week'];
+    var maxWeek = weekDim.top(1)[0]['Week'];
 
     //Default colors
-    var colorScheme = ["#013369","#D50A0A","#008000","#FFA500","#FFFF00"];
+    var colorScheme = ['#013369','#D50A0A','#008000','#FFA500','#FFFF00'];
     var currentTeam = null;
 
     //Charts
-    playsChart = dc.compositeChart("#plays-chart");
-    yardsChart = dc.lineChart("#yards-chart");
-    passLocationChart = dc.rowChart("#pass-location-row-chart");
-    numberPlaysND = dc.numberDisplay("#number-plays-nd");
-    totalYardsND = dc.numberDisplay("#total-yards-nd");
-    avgYardsND = dc.numberDisplay("#avg-yards-nd");
-    passOutcomeChart = dc.pieChart("#complete-chart");
-    passToPositionChart = dc.pieChart("#position-chart");
-    downChart = dc.rowChart("#down-row-chart");
-    quarterChart = dc.rowChart("#quarter-row-chart");
-    playTypeChart = dc.rowChart("#playtype-row-chart");
-    runLocationChart = dc.rowChart("#run-location-row-chart");
-    runGapChart = dc.rowChart("#run-gap-row-chart");
+    playsChart = dc.compositeChart('#plays-chart');
+    yardsChart = dc.lineChart('#yards-chart');
+    passLocationChart = dc.rowChart('#pass-location-row-chart');
+    numberPlaysND = dc.numberDisplay('#number-plays-nd');
+    totalYardsND = dc.numberDisplay('#total-yards-nd');
+    avgYardsND = dc.numberDisplay('#avg-yards-nd');
+    passOutcomeChart = dc.pieChart('#complete-chart');
+    passToPositionChart = dc.pieChart('#position-chart');
+    downChart = dc.rowChart('#down-row-chart');
+    quarterChart = dc.rowChart('#quarter-row-chart');
+    playTypeChart = dc.rowChart('#playtype-row-chart');
+    runLocationChart = dc.rowChart('#run-location-row-chart');
+    runGapChart = dc.rowChart('#run-gap-row-chart');
     offensiveTeamSelectField = dc.selectMenu('#team-menu-select');
-    passOrRushSelectField = dc.selectMenu("#pass-or-rush-menu-select");
+    passOrRushSelectField = dc.selectMenu('#pass-or-rush-menu-select');
 
     offensiveTeamSelectField
         .height(100)
@@ -360,35 +360,35 @@ function makeGraphs(error, nflData2017) {
         .on('pretransition', function(passOrRushSelectField) {
                 //if pass toggle/hide run
                 var currentState = passOrRushSelectField.filters();
-                if (currentState == "Pass"){
-                    $("#runRow").hide();
-                    $("#passRow").show();
-                } else if (currentState == "Run") {
-                    $("#passRow").hide();
-                    $("#runRow").show();
+                if (currentState == 'Pass'){
+                    $('#runRow').hide();
+                    $('#passRow').show();
+                } else if (currentState == 'Run') {
+                    $('#passRow').hide();
+                    $('#runRow').show();
                 } else {
-                    $("#passRow").show();
-                    $("#runRow").show();
+                    $('#passRow').show();
+                    $('#runRow').show();
                 }
         })
         .title(function(d) {return d.key;});
 
     numberPlaysND
-        .formatNumber(d3.format("d"))
+        .formatNumber(d3.format('d'))
         .valueAccessor(function (d) {
             return d;
         })
         .group(all);
 
     totalYardsND
-        .formatNumber(d3.format("d"))
+        .formatNumber(d3.format('d'))
         .valueAccessor(function (d) {
             return d;
         })
         .group(totalYards);
 
     avgYardsND
-        .formatNumber(d3.format(".3g"))
+        .formatNumber(d3.format('.3g'))
         .valueAccessor(avg)
         .group(avgYardsGroup);
 
@@ -398,14 +398,14 @@ function makeGraphs(error, nflData2017) {
         .dimension(weekDim)
         .transitionDuration(500)
         .x(d3.scale.linear().domain([minWeek, maxWeek]))
-        .xAxisLabel("Week")
-        .yAxisLabel("Total Plays")
+        .xAxisLabel('Week')
+        .yAxisLabel('Total Plays')
         .elasticY(true)
         .useViewBoxResizing(true)
         .brushOn(false)
         .legend(dc.legend()
             .legendText(function (d,i) {
-                legendArray = ["Run","Pass"];
+                legendArray = ['Run','Pass'];
                 return legendArray[i];
             })
             .horizontal(false)
@@ -463,8 +463,8 @@ function makeGraphs(error, nflData2017) {
         .elasticY(true)
         .useViewBoxResizing(true)
         .brushOn(false)
-        .xAxisLabel("Week")
-        .yAxisLabel("Total Yards")
+        .xAxisLabel('Week')
+        .yAxisLabel('Total Yards')
         .on('preRedraw', function(yardsChart) {
             currentTeam = offensiveTeamSelectField.filters()[0];
             yardsChart.ordinalColors(getTeamColors(currentTeam));
@@ -493,9 +493,9 @@ function makeGraphs(error, nflData2017) {
         .group(filteredPassLocationGroup)
         .labelOffsetX(-40)
         .ordering(function(d){
-            if(d.key == "left") return 0;
-            else if (d.key == "middle") return 1;
-            else if (d.key == "right") return 2;
+            if(d.key == 'left') return 0;
+            else if (d.key == 'middle') return 1;
+            else if (d.key == 'right') return 2;
             else return 3;
         })
         .elasticX(true)
@@ -521,9 +521,9 @@ function makeGraphs(error, nflData2017) {
         .group(downGroup)
         .labelOffsetX(-20)
         .ordering(function(d){
-            if(d.key == "1") return 0;
-            else if (d.key == "2") return 1;
-            else if (d.key == "3") return 2;
+            if(d.key == '1') return 0;
+            else if (d.key == '2') return 1;
+            else if (d.key == '3') return 2;
             else return 4;
         })
         .elasticX(true)
@@ -549,10 +549,10 @@ function makeGraphs(error, nflData2017) {
         .group(quarterGroup)
         .labelOffsetX(-20)
         .ordering(function(d){
-            if(d.key == "1") return 0;
-            else if (d.key == "2") return 1;
-            else if (d.key == "3") return 2;
-            else if (d.key == "4") return 3;
+            if(d.key == '1') return 0;
+            else if (d.key == '2') return 1;
+            else if (d.key == '3') return 2;
+            else if (d.key == '4') return 3;
             else return 4;
         })
         .elasticX(true)
@@ -562,12 +562,10 @@ function makeGraphs(error, nflData2017) {
             quarterChart.ordinalColors(getTeamColors(currentTeam));
             })
         .on('preRedraw',function(quarterChart){
-            //console.log("Redrawing Downs Chart...");
             currentTeam = offensiveTeamSelectField.filters()[0];
             quarterChart.ordinalColors(getTeamColors(currentTeam));
         })
         .on('preRender',function(quarterChart){
-            //console.log("Redrawing Downs Chart...");
             currentTeam = offensiveTeamSelectField.filters()[0];
             quarterChart.ordinalColors(getTeamColors(currentTeam));
         })
