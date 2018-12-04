@@ -9,7 +9,7 @@ I designed the Football Analyst application with a minamalist approach to appeal
 ### USER STORIES:
 
 #### As a coach:
-- I want to exploit my opponents weaknesses so that my team wins the game.
+- I want to exploit my opponents weaknesses so that my team has a better opportunity to win games.
 - I want to filter every pass/run situation so that my team can make better play calls.
 - I want to view team by team data so that I can gameplan for a specific opponent.
 - I want to filter by the following criteria so that I can see playcall tendancies:
