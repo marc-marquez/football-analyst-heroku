@@ -17,15 +17,15 @@ DBS_NAME = os.environ.get('MONGO_DB_NAME')
 
 PBP_2017_COLLECTION_NAME = 'pbp_2017_bare_min_merged'
 
-@app.route("/")
+@app.route('/')
 def index():
     """
     A Flask view to serve the main dashboard page.
     """
-    return render_template("index.html")
+    return render_template('index.html')
 
 
-@app.route("/pbp_2017")
+@app.route('/pbp_2017')
 def nfl_data():
     """
     A Flask view to serve the project data from
@@ -50,5 +50,5 @@ def nfl_data():
 
         return json.dumps(list(pbp_2017))
 
-if __name__ == "__main__":
-    app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=False)
