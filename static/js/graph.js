@@ -139,6 +139,45 @@ function getTeamURL(team){
     return teamURL[team];
 }
 
+/*Temporary function to get team websites for 2017.  Need to import from database.*/
+function getTeamName(team){
+    var teamName = {
+        'ARI': 'Arizona Cardinals',
+        'ATL': 'Atlanta Falcons',
+        'BAL': 'Baltimore Ravens',
+        'BUF': 'Buffalo Bills',
+        'CAR': 'Carolina Panthers',
+        'CHI': 'Chicago Bears',
+        'CIN': 'Cincinnati Bengels',
+        'CLE': 'Cleveland Browns',
+        'DAL': 'Dallas Cowboys',
+        'DEN': 'Denver Broncos',
+        'DET': 'Detroit Lions',
+        'GB': 'Green Bay Packers',
+        'HOU': 'Houston Texans',
+        'IND': 'Indianapolis Colts',
+        'JAX': 'Jacksonville Jaguars',
+        'KC': 'Kansas City Chiefs',
+        'LA': 'Los Angeles Rams',
+        'LAC': 'Los Angeles Chargers',
+        'MIA': 'Miami Dolphins',
+        'MIN': 'Minnesota Vikings',
+        'NE': 'New England Patriots',
+        'NO': 'New Orleans Saints',
+        'NYG': 'New York Giants',
+        'NYJ': 'New York Jets',
+        'OAK': 'Oakland Raiders',
+        'PHI': 'Philadelphia Eagles',
+        'PIT': 'Pittsburg Steelers',
+        'SF': 'San Francisco 49ers',
+        'SEA': 'Seattle Seahawks',
+        'TB': 'Tampa Bay Buccaneers',
+        'TEN': 'Tennessee Titans',
+        'WAS': 'Washington Redskins'
+    };
+    return teamName[team];
+}
+
 /*Temporary function to get bye weeks for 2017.  Need to either import from database or use groupSum
 to figure out where the bye weeks are. Hint, you need to find where run and pass plays are zero for that
 week.
@@ -350,7 +389,7 @@ function makeGraphs(error, nflData2017) {
         .dimension(offenseTeamDim)
         .group(offenseTeamGroup)
         .useViewBoxResizing(true)
-        .title(function(d) {return d.key;});
+        .title(function(d) {return getTeamName(d.key) + " (" + d.key + ")";});
 
     passOrRushSelectField
         .height(100)

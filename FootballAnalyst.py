@@ -45,7 +45,7 @@ def nfl_data():
         pbp_2017_collection = conn[DBS_NAME][PBP_2017_COLLECTION_NAME]
 
         # Retrieve a result set only with the fields defined in FIELDS
-        # and limit the the results to 55000
+        # and limit the the results to 100000
         pbp_2017 = pbp_2017_collection.find(projection=PBP_FIELDS, limit=100000)
 
         return json.dumps(list(pbp_2017))
