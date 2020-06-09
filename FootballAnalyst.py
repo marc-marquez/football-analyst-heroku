@@ -39,7 +39,7 @@ def nfl_data():
 
     # Open a connection to MongoDB using a with statement such that the
     # connection will be closed as soon as we exit the with statement
-    #with MongoClient(MONGODB_HOST, MONGODB_PORT) as conn:
+    # with MongoClient(MONGODB_HOST, MONGODB_PORT) as conn:
     with MongoClient(MONGO_URI) as conn:
         # Define which collection we wish to access
         pbp_2017_collection = conn[DBS_NAME][PBP_2017_COLLECTION_NAME]
